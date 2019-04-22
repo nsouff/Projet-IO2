@@ -1,0 +1,62 @@
+DROP TABLE IF EXISTS seeker;
+DROP TABLE IF EXISTS announce;
+DROP TABLE IF EXISTS announcer;
+DROP TABLE IF EXISTS departements;
+DROP TABLE IF EXISTS regions;
+
+
+
+CREATE TABLE IF NOT EXISTS regions (
+  id TINYINT(2) UNSIGNED NOT NULL,
+  name VARCHAR(256) NOT NULL DEFAULT '',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS departements (
+  id SMALLINT(3) UNSIGNED NOT NULL,
+  name VARCHAR(32) NOT NULL,
+  region_id TINYINT(2) UNSIGNED NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (region_id) REFERENCES regions (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS announcer (
+  name VARCHAR(32) NOT NULL,
+  adresse VARCHAR(32) NOT NULL,
+  email VARCHAR(32) NOT NULL,
+  PRIMARY KEY (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS announce(
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  announcer VARCHAR(32) NOT NULL,
+  short_description VARCHAR(32) NOT NULL,
+  long_description VARCHAR(256) NOT NULL,
+  type CHAR(3) NOT NULL,
+  start_date DATE,
+  end_date DATE,
+  job VARCHAR(32) NOT NULL,
+  region_id TINYINT(2) UNSIGNED NOT NULL,
+  departement_id SMALLINT(3) UNSIGNED NOT NULL,
+  adress VARCHAR(32),
+  PRIMARY KEY (id),
+  FOREIGN KEY (region_id) REFERENCES regions (id),
+  FOREIGN KEY (departement_id) REFERENCES departements (id),
+  FOREIGN KEY (announcer) REFERENCES announcer (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ CREATE TABLE IF NOT EXISTS seeker (
+   first_name VARCHAR(16) NOT NULL,
+   last_name VARCHAR(16) NOT NULL,
+   email VARCHAR(32) NOT NULL,
+   phone_number INT(10) UNSIGNED NOT NULL,
+   departement_id SMALLINT(3) UNSIGNED NOT NULL,
+   region_id TINYINT(2) UNSIGNED NOT NULL,
+   adress VARCHAR(32),
+   FOREIGN KEY (departement_id) REFERENCES departements (id),
+   FOREIGN KEY (region_id) REFERENCES regions (id)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+ 
