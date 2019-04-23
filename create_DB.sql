@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS announce(
   FOREIGN KEY (city_id) REFERENCES cities (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
- CREATE TABLE IF NOT EXISTS seeker (
+CREATE TABLE IF NOT EXISTS seeker (
    first_name VARCHAR(16) NOT NULL,
    last_name VARCHAR(16) NOT NULL,
    email VARCHAR(32) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS announce(
 
 
 
- INSERT INTO  regions (id, name)
+INSERT INTO  regions (id, name)
       VALUES  (1, 'Alsace'),
               (2, 'Aquitaine'),
               (3, 'Auvergne'),
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS announce(
               (25, 'Martinique'),
               (26, 'Réunion');
 
- INSERT INTO  departements (id, name, region_id)
+INSERT INTO  departements (id, name, region_id)
       VALUES  ('01', 'Ain', 22),
               ('02', 'Aisne', 19),
               ('03', 'Allier', 3),
@@ -203,9 +203,8 @@ CREATE TABLE IF NOT EXISTS announce(
               ('974', 'La Réunion', 26);
 
 
-              INSERT INTO  cities (name, departement_id)
-                   VALUES
-              ('Aast', '64'),
+INSERT INTO  cities (name, departement_id)
+      VALUES  ('Aast', '64'),
               ('Ablaincourt-Pressoir', '80'),
               ('Absie', '79'),
               ('Achères', '78'),
@@ -2609,3 +2608,20 @@ CREATE TABLE IF NOT EXISTS announce(
               ('Yvetot', '76'),
               ('Yzeure', '03'),
               ('Zillisheim', '68');
+
+INSERT INTO announcer (name, adresse, email)
+      VALUES ('a', '7 avenue jean Jaurès', 'a@gmail.com'),
+             ('b', '9 rue de la plaine', 'b@ghotmail.fr');
+
+INSERT INTO announce (
+  announcer,
+  short_description,
+  long_description,
+  type,
+  job,
+  region_id,
+  departement_id,
+  city_id
+)
+      VALUES ('a', 'une description', 'une longue description', 'CDI', 'Vendur', 13, '75', 1494),
+             ('b', 'une description2', 'une longue description 2', 'CDI', 'Vendeur', 13, '75', 1494);

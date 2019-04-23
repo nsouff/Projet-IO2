@@ -1,13 +1,17 @@
 <?php
-  $logged;
+  include_once('connex_BD.php');
+  include_once('offres_ville.php');
  ?>
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>NOM DU SITE</title>
   </head>
   <body>
-
+    <?php
+      $connex = connex_BD();
+      offres_ville($connex, '1494');
+     ?>
   </body>
 </html>
