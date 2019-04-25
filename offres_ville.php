@@ -1,13 +1,15 @@
 <?php
   include_once('nTabulation.php');
-  function offres_ville($connex, $city){
+  function offres_ville($connex, $city, $n){ // Affiche $n annonce de la ville $city ($city est l'id de la ville)
     $req = 'SELECT *, DATE_FORMAT(start_date, "%d/%m/%Y"), DATE_FORMAT(end_date, "%d/%m/%Y") FROM announce WHERE city_id='.$city.';';
     $res = mysqli_query($connex, $req);
     if (mysqli_num_rows($res) == 0){
       echo "Il n'a actuellement aucune offre d'emploie dans votre ville";
     }
     else {
-      while ($ligne = mysqli_fetch_assoc($res)){
+      $i = 0;
+      while (($ligne = mysqli_fetch_assoc($res)) && ($i < $n)){
+        $i++;
         echo "<div>\n".nTab(2)."<h3>".$ligne['announcer']." cherche un ".$ligne['job']." dans votre ville</h3>\n";
         echo nTab(2)."<ul>\n".nTab(3)."<li>Type: ".$ligne['type']."</li>\n";
         if ($ligne['type'] == "CDD"){
