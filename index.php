@@ -23,7 +23,7 @@
       <a href="#">^^</a>
     </nav>
     <div class="search">
-      <form action="index.php" method="get">
+      <form action="search.php" method="get">
         <div class="container">
           <label for="key"><h2>Job</h2></label>
           <input class="" type="text" name="key" placeholder="Mot clé" id="key">
@@ -31,6 +31,7 @@
         <div class="container">
           <label for="Où"><h2>Où</h2></label>
           <input class="Où" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
+          <input type="submit" value="chercher">
         </div>
       </form>
     </div>
