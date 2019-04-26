@@ -23,7 +23,7 @@
       <a href="#">^^</a>
     </nav>
     <div class="search">
-      <form action="index.php" method="post">
+      <form action="index.php" method="get">
         <div class="container">
           <label for="key"><h2>Job</h2></label>
           <input class="" type="text" name="key" placeholder="Mot clé" id="key">
