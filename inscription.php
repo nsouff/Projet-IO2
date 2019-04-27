@@ -1,5 +1,5 @@
 <?php
-  include_once('regions.php');
+  include_once('deroul.php');
   include_once('connex_BD.php');
   $connex = connex_BD();
  ?>
@@ -20,8 +20,12 @@
       <input type="email" name="email">
       <label for="phone">Téléphone: </label>
       <input type="tel" name="phone" id="phone">
-      <?php regions($connex); ?>
-      
+      <?php
+        deroul($connex, "regions");
+        deroul($connex, "departements");
+        deroul($connex, "cities");
+        ?>
+
     </form>
   </body>
 </html>
