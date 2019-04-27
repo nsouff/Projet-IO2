@@ -1,5 +1,5 @@
 <?php
-  include_once('affiche_annonce.php');
+  include_once('affiche_offre.php');
   include_once('isAlmost.php');
   function offre_search($connex, $job, $type, $reg_id, $dep_id, $city_id, $start_date, $end_date, $n) {
     // $n est le nombre d'annonce maximum que l'on veut afficher
@@ -41,22 +41,6 @@
       affiche_offre(array($trois, $deux, $un, $zero), $n);
     }
 
-  }
-
-  function affiche_offre($tab, $n){
-
-    // $n est le nombre de ligne que l'on veut afficher
-    // $tab est un tableau de tableau de tableau, il contient 4 tableau le premier contient les offres les plus pertinentes et le dernier celles qui le sont moins
-    
-    $i = 0;
-    foreach ($tab as $value) {
-      foreach ($value as $val) {
-        if ($i >= $n)  break;
-        $i++;
-        affiche_annonce($val);
-      }
-      if ($i >= $n) break;
-    }
   }
 
  ?>
