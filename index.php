@@ -15,7 +15,7 @@
       <nav>
         <a href="">Trouver un emploie</a>
         <a href="">Entreptise - Publier une annonce</a>
-        <!-- <a href="">Partie du site 3</a> -->
+        <a href="inscription.php">S'inscrire</a>
         <!-- <a href="">Etc...</a> -->
       </nav>
     </header>

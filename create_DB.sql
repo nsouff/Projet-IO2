@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS announcer (
   name VARCHAR(32) NOT NULL,
   adresse VARCHAR(32) NOT NULL,
   email VARCHAR(32) NOT NULL,
-  password VARCHAR NOT NULL,
+  password VARCHAR(64) NOT NULL,
   PRIMARY KEY (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS seeker (
    region_id TINYINT(2) UNSIGNED NOT NULL,
    city_id INT(2) UNSIGNED NOT NULL,
    adress VARCHAR(32),
-   password VARCHAR NOT NULL,
+   password VARCHAR(64) NOT NULL,
    FOREIGN KEY (city_id) REFERENCES cities (id),
    FOREIGN KEY (departement_id) REFERENCES departements (id),
    FOREIGN KEY (region_id) REFERENCES regions (id)
