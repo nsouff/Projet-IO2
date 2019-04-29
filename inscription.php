@@ -1,7 +1,7 @@
 <?php
   include_once('deroul.php');
   include_once('connex_BD.php');
-  include_once('save.php');
+  include_once('save_user.php');
   $connex = connex_BD();
   $b = (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['regions']) && isset($_POST['departements']) && isset($_POST['cities']) && isset($_POST['password']));
   if ($b){
@@ -23,7 +23,7 @@
     <title>SITE - inscription</title>
   </head>
   <body>
-    <?php if ($b): save($connex, $fn, $ls, $em, $ph, $reg, $dep, $cit, $pass); ?>
+    <?php if ($b): save_user($connex, $fn, $ls, $em, $ph, $reg, $dep, $cit, $pass); ?>
     <?php else: ?>
       <form class="inscription" action="inscription.php" method="post">
         <label for="fn">Prénom: </label>

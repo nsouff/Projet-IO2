@@ -14,7 +14,7 @@
       <h1>NOM DU SITE</h1>
       <nav>
         <a href="">Trouver un emploie</a>
-        <a href="">Entreptise - Publier une annonce</a>
+        <a href="inscription_entr.php">Entreptise - Publier une annonce</a>
         <a href="inscription.php">S'inscrire</a>
         <!-- <a href="">Etc...</a> -->
       </nav>
