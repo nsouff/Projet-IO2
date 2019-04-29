@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS link;
 DROP TABLE IF EXISTS seeker;
 DROP TABLE IF EXISTS announce;
 DROP TABLE IF EXISTS announcer;
@@ -58,6 +59,7 @@ CREATE TABLE IF NOT EXISTS announce(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS seeker (
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(16) NOT NULL,
    last_name VARCHAR(16) NOT NULL,
    email VARCHAR(32) NOT NULL,
@@ -67,12 +69,20 @@ CREATE TABLE IF NOT EXISTS seeker (
    city_id INT(2) UNSIGNED NOT NULL,
    adress VARCHAR(32),
    password VARCHAR(64) NOT NULL,
+   PRIMARY KEY (id),
    FOREIGN KEY (city_id) REFERENCES cities (id),
    FOREIGN KEY (departement_id) REFERENCES departements (id),
    FOREIGN KEY (region_id) REFERENCES regions (id)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+ CREATE TABLE IF NOT EXISTS link (
+   CV VARCHAR(32) NOT NULL,
+   motiv VARCHAR(32),
+   seeker_id INT UNSIGNED NOT NULL,
+   announce_id INT UNSIGNED NOT NULL,
+   FOREIGN KEY (seeker_id) REFERENCES seeker (id),
+   FOREIGN KEY (announce_id) REFERENCES announce (id)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO  regions (id, name)
       VALUES  (1, 'Alsace'),
