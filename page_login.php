@@ -4,11 +4,11 @@ include_once('login.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
 if($b) {
-  $a=verifLogin($_POST['mail'],$_POST['mdp'],"seeker");
+  $a=verifLogin($_POST['mail'],$_POST['mdp'],"user");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
     //$_SESSION['adresseRetour']='http://localhost/io2/projet-io2/inscription.php';
-    $infos=récupSeeker($_POST['mail']);
+    $infos=récupUser($_POST['mail']);
     $_SESSION['prénom']=$infos['first_name'];
     $_SESSION['nom']=$infos['last_name'];
     $return='Location: '.$_SESSION['adresseRetour'];

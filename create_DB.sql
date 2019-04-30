@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS link;
-DROP TABLE IF EXISTS seeker;
+DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS announce;
 DROP TABLE IF EXISTS announcer;
 DROP TABLE IF EXISTS cities;
@@ -60,17 +60,18 @@ CREATE TABLE IF NOT EXISTS announce(
   FOREIGN KEY (city_id) REFERENCES cities (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS seeker (
+CREATE TABLE IF NOT EXISTS user (
    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(16) NOT NULL,
    last_name VARCHAR(16) NOT NULL,
    email VARCHAR(32) NOT NULL,
    phone_number INT(10) UNSIGNED NOT NULL,
-   departement_id CHAR(3) NOT NULL,
-   region_id TINYINT(2) UNSIGNED NOT NULL,
-   city_id INT(2) UNSIGNED NOT NULL,
+   departement_id CHAR(3),
+   region_id TINYINT(2) UNSIGNED,
+   city_id INT(2) UNSIGNED,
    adress VARCHAR(32),
    password VARCHAR(64) NOT NULL,
+   level TINYINT UNSIGNED NOT NULL DEFAULT 1,
    PRIMARY KEY (id),
    FOREIGN KEY (city_id) REFERENCES cities (id),
    FOREIGN KEY (departement_id) REFERENCES departements (id),
@@ -80,9 +81,9 @@ CREATE TABLE IF NOT EXISTS seeker (
  CREATE TABLE IF NOT EXISTS link (
    CV VARCHAR(32) NOT NULL,
    motiv VARCHAR(32),
-   seeker_id INT UNSIGNED NOT NULL,
+   user_id INT UNSIGNED NOT NULL,
    announce_id INT UNSIGNED NOT NULL,
-   FOREIGN KEY (seeker_id) REFERENCES seeker (id),
+   FOREIGN KEY (user_id) REFERENCES user (id),
    FOREIGN KEY (announce_id) REFERENCES announce (id)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
