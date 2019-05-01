@@ -19,9 +19,9 @@
     }
   }
   function save2($connex,$announcer,$long,$short,$type,$start,$end,$job,$reg,$dep,$cit) {
-    $req= "INSERT INTO announce (announcer,short_description,long_description,type,start_date,end_date,job,region_id,departemenr_id,city_id,valid) VALUES (\"$announcer\",\"$short\", \"$long\", \"$type\", $start, $end, \"$job\", $reg, \"$dep\", $cit, false)";
+    $req= "INSERT INTO announce (announcer,short_description,long_description,type,start_date,end_date,job,region_id,departement_id,city_id) VALUES (\"$announcer\",\"$short\", \"$long\", \"$type\", \"$start\", \"$end\", \"$job\", $reg, \"$dep\", $cit)";
     $res= mysqli_query($connex, $req);
-    if (!res) echo "erreur";
+    if (!$res) echo "erreur";
     else echo "enregistré";
   }
 

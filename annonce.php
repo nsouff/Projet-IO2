@@ -8,7 +8,7 @@
   $announce_id = $_GET['id'];
   $connex = connex_BD();
 
-  $b = (isset($_SESSION['id']) && isset($_SESSION['prénom']) && isset($_SESSION['nom']));
+  $b = !(empty($_SESSION['id']) && empty($_SESSION['prénom']) && empty($_SESSION['nom']));
 
   if ($b){
     $p = $_SESSION['prénom'];

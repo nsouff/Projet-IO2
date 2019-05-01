@@ -24,7 +24,9 @@ if($b) {
   </head>
   <body>
     <?php
-    if (!$b) {
+
+    if (!$a) {
+      if($b) echo "vos identifiants sont faux";
     echo '<h1> Connectez vous à votre compte Entreprise </h1>
     <form action=connexionEntreprise.php method=POST>
       <label for="e">Adresse mail:</label>
@@ -34,7 +36,8 @@ if($b) {
       <input type=password name=mdp id=a>
       <br>
       <input type=submit>
-    </form>'; }  ?>
+    </form>'; }
+      ?>
 
   </body>
 </html>

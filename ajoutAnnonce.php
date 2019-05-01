@@ -8,6 +8,7 @@ $a=isset($_SESSION['announcer_name']);
 if($a) { $announcer=$_SESSION['announcer_name']; }
 $b=(isset($_POST['short']) && isset($_POST['long']) && isset($_POST['type']) && isset($_POST['start']) && isset($_POST['regions']) && isset($_POST['departements']) && isset($_POST['cities']) && isset($_POST['end']) && isset($_POST['job']));
 if($b) {
+  echo $_POST['start'];
   $announcer = mysqli_real_escape_string($connex, $_SESSION['announcer_name']);
   $sh = mysqli_real_escape_string($connex, $_POST['short']);
   $lg = mysqli_real_escape_string($connex, $_POST['long']);
@@ -19,6 +20,9 @@ if($b) {
   $cit = mysqli_real_escape_string($connex, $_POST['cities']);
   $job = mysqli_real_escape_string($connex, $_POST['job']);
   save2(connex_BD(),$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit);
+  $c='index.php';
+  $d='Location: '.$c;
+  header($d);
 }
  ?>
  <!DOCTYPE html>
@@ -56,6 +60,8 @@ if($b) {
          deroul($connex, "cities");
          echo "<br>";
          ?>
+       <input type="submit">
+     </form>
 
          <?php endif; ?>
          <?php if(!$a) {

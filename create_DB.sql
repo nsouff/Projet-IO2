@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS announce(
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   announcer VARCHAR(32) NOT NULL,
   short_description VARCHAR(32) NOT NULL,
-  long_description VARCHAR(256) NOT NULL,
+  long_description VARCHAR(1024) NOT NULL,
   type CHAR(3) NOT NULL,
   start_date DATE,
   end_date DATE,
@@ -79,7 +79,8 @@ CREATE TABLE IF NOT EXISTS user (
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
  CREATE TABLE IF NOT EXISTS link (
-   motiv BOOLEAN NOT NULL,
+   motiv_ext VARCHAR(4) NOT NULL DEFAULT '',
+   cv_ext VARCHAR(4) NOT NULL,
    user_id INT UNSIGNED NOT NULL,
    announce_id INT UNSIGNED NOT NULL,
    FOREIGN KEY (user_id) REFERENCES user (id),
@@ -2623,9 +2624,8 @@ INSERT INTO  cities (name, departement_id)
               ('Yzeure', '03'),
               ('Zillisheim', '68');
 
-INSERT INTO announcer (name, adresse, email)
-      VALUES ('a', '7 avenue jean Jaurès', 'a@gmail.com'),
-             ('b', '9 rue de la plaine', 'b@ghotmail.fr');
+INSERT INTO announcer (name, adresse, email, password)
+      VALUES ('annonceur', '7 avenue jean Jaurès', 'a@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6');
 
 INSERT INTO announce (
   announcer,
@@ -2637,5 +2637,6 @@ INSERT INTO announce (
   departement_id,
   city_id
 )
-      VALUES ('a', 'une description', 'une longue description', 'CDI', 'Vendur', 13, '75', 1494),
-             ('b', 'une description2', 'une longue description 2', 'CDI', 'Vendeur', 13, '75', 1494);
+      VALUES ('annonceur', 'une description', 'une longue description', 'CDI', 'Vendeur', 11, '75', 1494);
+ INSERT INTO user (first_name, last_name, email, phone_number, password) VALUES ('site', 'site', 'site@site.com', 0000000000, '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6');
+  INSERT INTO link(cv_ext, user_id, announce_id) VALUES ('pdf', 1, 1);
