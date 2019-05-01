@@ -7,10 +7,11 @@ if($b) {
   $a=verifLogin($_POST['mail'],$_POST['mdp'],"user");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
-    //$_SESSION['adresseRetour']='http://localhost/io2/projet-io2/inscription.php';
+    $_SESSION['adresseRetour']='annonce.php?id=1';
     $infos=récupUser($_POST['mail']);
     $_SESSION['prénom']=$infos['first_name'];
     $_SESSION['nom']=$infos['last_name'];
+    $_SESSION['id']=$infos['id'];
     $return='Location: '.$_SESSION['adresseRetour'];
     header($return);
     exit();

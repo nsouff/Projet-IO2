@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS announcer (
   adresse VARCHAR(32) NOT NULL,
   email VARCHAR(32) NOT NULL,
   password VARCHAR(64) NOT NULL,
-  valid BOOLEAN NOT NULL,
+  valid BOOLEAN NOT NULL DEFAULT FALSE,
   PRIMARY KEY (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS announce(
   departement_id CHAR(3) NOT NULL,
   city_id INT(2) UNSIGNED NOT NULL,
   adress VARCHAR(32),
-  valid BOOLEAN NOT NULL,
+  valid BOOLEAN NOT NULL DEFAULT FALSE,
   PRIMARY KEY (id),
   FOREIGN KEY (region_id) REFERENCES regions (id),
   FOREIGN KEY (departement_id) REFERENCES departements (id),
@@ -79,8 +79,7 @@ CREATE TABLE IF NOT EXISTS user (
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
  CREATE TABLE IF NOT EXISTS link (
-   CV VARCHAR(32) NOT NULL,
-   motiv VARCHAR(32),
+   motiv BOOLEAN NOT NULL,
    user_id INT UNSIGNED NOT NULL,
    announce_id INT UNSIGNED NOT NULL,
    FOREIGN KEY (user_id) REFERENCES user (id),

@@ -14,7 +14,7 @@ function verifLogin($login,$mdp,$table) {
 
 
 function récupUser($mail) {
-  $req='select first_name,last_name from user where email=\''.$mail.'\'';
+  $req='select first_name,last_name, id from user where email=\''.$mail.'\'';
   $resultat=mysqli_query(connex_BD(),$req);
   $result=mysqli_fetch_assoc($resultat);
   return $result;
