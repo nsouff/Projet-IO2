@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('getResp.php');
+include_once('head.php');
 $resp = getResp();
 
 include_once('login.php');
@@ -30,10 +31,12 @@ if($b) {
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>Page de Login</title>
   </head>
   <body>
     <?php
+    head();
     if ($resp == 4){
       echo "<h1>Vous êtes connecté en tant qu'entreprise</h1>\n<br>\n<a href=\"compte.php\">voulez vous vous deconnectez?</a>";
     }

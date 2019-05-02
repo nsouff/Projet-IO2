@@ -6,6 +6,7 @@
   include_once('erreur.php');
   include_once('getId.php');
   include_once('getResp.php');
+  include_once('head.php');
   $b = (isset($_GET['key']) && isset($_GET['Où']));
   $_SESSION['adresseRetour'] = 'search.php';
   if ($b){
@@ -24,6 +25,7 @@
   </head>
   <body>
     <?php
+      head();
       if ($b){
         $i = locate($connex, $où);
         if ($i != -1) $id = getId($connex, $où, $i);

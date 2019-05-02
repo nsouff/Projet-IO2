@@ -2,6 +2,7 @@
   include_once('nTabulation.php');
   include_once('save_entr.php');
   include_once('connex_BD.php');
+  include_once('head.php');
   $connex = connex_BD();
   $b = (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']));
 
@@ -17,9 +18,11 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>SITE - Sign in Entreprise</title>
   </head>
   <body>
+    <?php head(); ?>
     <?php if ($b): save_entr($connex, $n, $em, $pass)?>
 
     <?php else: ?>

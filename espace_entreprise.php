@@ -5,15 +5,18 @@
   include_once('affiche_annonce.php');
   include_once('affiche_postulant.php');
   include_once('getResp.php');
+  include_once('head.php');
   $connex = connex_BD();
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>SITE - espace entreprise</title>
   </head>
   <body>
+    <?php head(); ?>
     <?php
       if (getResp() != 4) echo "<h1>Vous n'êtes pas connecté</h1><a href=\"connexionEntreprise.php\">Connectez vous</a>";
       else {

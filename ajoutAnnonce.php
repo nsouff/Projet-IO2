@@ -3,6 +3,7 @@ session_start();
 include_once('deroul.php');
 include_once('connex_BD.php');
 include_once('save.php');
+include_once('head.php');
 $_SESSION['adresseRetour'] = 'ajoutAnnonce.php';
 $connex=connex_BD();
 $a=isset($_SESSION['announcer_name']);
@@ -30,9 +31,11 @@ if($b) {
  <html lang="fr" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
      <title>Ajouter une annonce</title>
    </head>
    <body>
+     <?php head(); ?>
      <?php if ($a): ?>
      <form class="inscription" action="ajoutAnnonce.php" method="post">
        <label for="sd">Courte description de l'annonce: </label>

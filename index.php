@@ -2,6 +2,7 @@
   session_start();
   include_once('connex_BD.php');
   include_once('offres_ville.php');
+  include_once('head.php');
   $_SESSION['adresseRetour'] = 'index.php';
  ?>
 <!DOCTYPE html>
@@ -12,15 +13,7 @@
     <title>NOM DU SITE</title>
   </head>
   <body>
-    <header class="menu">
-      <h1>NOM DU SITE</h1>
-      <nav>
-        <a href="">Trouver un emploie</a>
-        <a href="inscription_entr.php">Entreptise - Publier une annonce</a>
-        <a href="inscription.php">S'inscrire</a>
-        <!-- <a href="">Etc...</a> -->
-      </nav>
-    </header>
+    <?php head(); ?>
     <nav class="go_top">
       <a href="#">^^</a>
     </nav>

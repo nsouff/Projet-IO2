@@ -5,6 +5,7 @@
   include_once('getResp.php');
   include_once('postule.php');
   include_once('can_postule.php');
+  include_once('head.php');
   if (!isset($_GET['id'])) {
     header('LOCATION: index.php');
   }
@@ -24,9 +25,11 @@
  <html lang="fr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
      <title>SITE - annonce</title>
    </head>
    <body>
+     <?php head(); ?>
      <?php if ($b) postule($connex); ?>
      <?php aff_annonce_detail($connex, $announce_id); ?>
      <?php if ($b) echo "enregistré!"; ?>

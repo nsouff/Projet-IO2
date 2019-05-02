@@ -5,6 +5,7 @@ include_once('affiche_annonce_à_valider.php');
 include_once('aff_annonce_detail.php');
 include_once('gestionAnnonces.php');
 include_once('getResp.php');
+include_once('head.php');
 $resp = getResp();
 if ($resp != 2 && $resp != 3) header('Location: index.php');
 $connex=connex_BD();
@@ -25,9 +26,11 @@ foreach($_POST as $key => $val) {
  <html lang="fr" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
      <title>Approuver les annonces en attente</title>
    </head>
    <body>
+     <?php head(); ?>
      <?php if (!$b): ?>
        <form action=ApprobationAnnonces.php method=post>
        <table class="tftable" border="1">

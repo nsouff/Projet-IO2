@@ -1,8 +1,9 @@
 <?php
 session_start();
 include_once('getResp.php');
-if (getResp() != 0) header('index.php');
 include_once('login.php');
+include_once('head.php');
+if (getResp() != 0) header('index.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
 if($b) {
@@ -22,11 +23,12 @@ if($b) {
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>Page de Login</title>
   </head>
   <body>
     <?php
-
+    head();
     if (!$a) {
       if($b) echo "vos identifiants sont faux";
     echo '<h1> Connectez vous à votre compte Entreprise </h1>
