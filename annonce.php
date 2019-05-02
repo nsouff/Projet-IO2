@@ -3,6 +3,8 @@
   include_once('aff_annonce_detail.php');
   include_once('connex_BD.php');
   include_once('getResp.php');
+  include_once('postule.php');
+  include_once('can_postule.php');
   if (!isset($_GET['id'])) {
     header('LOCATION: index.php');
   }
@@ -25,10 +27,11 @@
      <title>SITE - annonce</title>
    </head>
    <body>
-     <?php if ($b) postule($connexion); ?>
+     <?php if ($b) postule($connex); ?>
      <?php aff_annonce_detail($connex, $announce_id); ?>
-     <?php if ($resp == 1): ?>
-       <form action="annonce.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
+     <?php if ($b) echo "enregistré!"; ?>
+     <?php if ($resp == 1 && can_postule($connex, $user_id, $announce_id)): ?>
+       <form action=<?php echo "annonce.php?id=$user_id"; ?> method="post" enctype="multipart/form-data">
          <label for="CV">CV: </label>
          <input type="file" name="CV" id="CV" required>
          <label for="Motiv">Lettre de motivation: </label>
@@ -36,8 +39,9 @@
          <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
          <input type="hidden" name="announce_id" value="<?php echo $announce_id; ?>">
          <input type="submit">
-     <?php else: echo "Connectez vous ou inscrivez vous pour postuler"; ?>
+       </form>
+     <?php elseif ($resp == 1 && !$b): echo "Vous avez déjà postuler"; ?>
+     <?php elseif ($resp != 1): echo "Connectez vous ou inscrivez vous pour postuler"; ?>
      <?php endif; ?>
-     </form>
    </body>
  </html>
