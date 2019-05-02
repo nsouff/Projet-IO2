@@ -6,14 +6,14 @@
 
     // On écrit qu'une seule fonction qu'elle soit le nombre de paramètre envoyé par l'utilisateur
 
-    if (!empty($city_id)) $req = "SELECT * FROM announce WHERE city_id=\"".$city_id."\";";
-    else if (!empty($departement_id)) $req = "SELECT * FROM announce WHERE departement_id=\"".$dep_id."\";";
-    else if (!empty($regions)) $req = "SELECT * FROM announce WHERE region_id=\"".$reg_id."\";";
+    if (!empty($city_id)) $req = "SELECT * FROM announce WHERE city_id=$city_id;";
+    else if (!empty($dep_id)) $req = "SELECT * FROM announce WHERE departement_id=\"".$dep_id."\";";
+    else if (!empty($reg_id)) $req = "SELECT * FROM announce WHERE region_id=$reg_id.;";
 
     else {
       // Demander d'insérer un lieu
       // Afficher un nouveau formulaire
-      exit;
+      // exit;
     }
 
     $res = mysqli_query($connex, $req);

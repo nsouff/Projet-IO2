@@ -2,15 +2,17 @@
   session_start();
   include_once('aff_annonce_detail.php');
   include_once('connex_BD.php');
+  include_once('getResp.php');
   if (!isset($_GET['id'])) {
     header('LOCATION: index.php');
   }
   $announce_id = $_GET['id'];
   $connex = connex_BD();
+  $_SESSION['adresseRetour'] = 'annonce.php?id='.$announce_id;
 
-  $b = !(empty($_SESSION['id']) && empty($_SESSION['prénom']) && empty($_SESSION['nom']));
-
-  if ($b){
+  $resp = getResp();
+  $b = isset($_POST['announce_id']);
+  if ($resp == 1){
     $p = $_SESSION['prénom'];
     $n = $_SESSION['nom'];
     $user_id = $_SESSION['id'];
@@ -23,9 +25,10 @@
      <title>SITE - annonce</title>
    </head>
    <body>
+     <?php if ($b) postule($connexion); ?>
      <?php aff_annonce_detail($connex, $announce_id); ?>
-     <?php if ($b): ?>
-       <form action="postule.php" method="post" enctype="multipart/form-data">
+     <?php if ($resp == 1): ?>
+       <form action="annonce.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
          <label for="CV">CV: </label>
          <input type="file" name="CV" id="CV" required>
          <label for="Motiv">Lettre de motivation: </label>

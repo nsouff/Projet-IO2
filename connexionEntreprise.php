@@ -1,5 +1,7 @@
 <?php
 session_start();
+include_once('getResp.php');
+if (getResp() != 0) header('index.php');
 include_once('login.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
@@ -7,7 +9,7 @@ if($b) {
   $a=verifLogin($_POST['mail'],$_POST['mdp'],"announcer");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
-    //$_SESSION['adresseRetour']='http://localhost/io2/projet-io2/inscription.php';
+    if (!isset($_SESSION['adresseRetour'])) $_SESSION['adresseRetour']='index.php';
     $infos=récupAnnouncer($_POST['mail']);
     $_SESSION['announcer_name']=$infos['name'];
     $return='Location: '.$_SESSION['adresseRetour'];
@@ -36,7 +38,8 @@ if($b) {
       <input type=password name=mdp id=a>
       <br>
       <input type=submit>
-    </form>'; }
+    </form>';
+    echo "pas encore inscrit? <a href=\"inscription_entr.php\">Inscrivez vous</a>";}
       ?>
 
   </body>

@@ -3,6 +3,7 @@ session_start();
 include_once('deroul.php');
 include_once('connex_BD.php');
 include_once('save.php');
+$_SESSION['adresseRetour'] = 'ajoutAnnonce.php';
 $connex=connex_BD();
 $a=isset($_SESSION['announcer_name']);
 if($a) { $announcer=$_SESSION['announcer_name']; }

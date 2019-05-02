@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS cities (
 
 CREATE TABLE IF NOT EXISTS announcer (
   name VARCHAR(32) NOT NULL,
-  adresse VARCHAR(32) NOT NULL,
   email VARCHAR(32) NOT NULL,
   password VARCHAR(64) NOT NULL,
   valid BOOLEAN NOT NULL DEFAULT FALSE,
@@ -51,7 +50,6 @@ CREATE TABLE IF NOT EXISTS announce(
   region_id TINYINT(2) UNSIGNED NOT NULL,
   departement_id CHAR(3) NOT NULL,
   city_id INT(2) UNSIGNED NOT NULL,
-  adress VARCHAR(32),
   valid BOOLEAN NOT NULL DEFAULT FALSE,
   PRIMARY KEY (id),
   FOREIGN KEY (region_id) REFERENCES regions (id),
@@ -69,7 +67,6 @@ CREATE TABLE IF NOT EXISTS user (
    departement_id CHAR(3),
    region_id TINYINT(2) UNSIGNED,
    city_id INT(2) UNSIGNED,
-   adress VARCHAR(32),
    password VARCHAR(64) NOT NULL,
    level TINYINT UNSIGNED NOT NULL DEFAULT 1,
    PRIMARY KEY (id),
@@ -2624,8 +2621,8 @@ INSERT INTO  cities (name, departement_id)
               ('Yzeure', '03'),
               ('Zillisheim', '68');
 
-INSERT INTO announcer (name, adresse, email, password)
-      VALUES ('annonceur', '7 avenue jean Jaurès', 'a@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6');
+INSERT INTO announcer (name, email, password)
+      VALUES ('annonceur', 'a@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6');
 
 INSERT INTO announce (
   announcer,
