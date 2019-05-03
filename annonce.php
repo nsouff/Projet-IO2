@@ -6,11 +6,13 @@
   include_once('postule.php');
   include_once('can_postule.php');
   include_once('head.php');
+  include_once('is_valid_announce.php');
   if (!isset($_GET['id'])) {
-    header('LOCATION: index.php');
+    header('Location: index.php');
   }
   $announce_id = $_GET['id'];
   $connex = connex_BD();
+  if (!is_valid_announce($connex, $announce_id)) header('Location: index.php');
   $_SESSION['adresseRetour'] = 'annonce.php?id='.$announce_id;
 
   $resp = getResp();
