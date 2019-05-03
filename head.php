@@ -11,7 +11,7 @@
       echo "<a href=\"inscription_entr.php\">Entrprise? Inscrivez-vous</a>";
       echo "<a href=\"connexionEntreprise.php\">Connexion entreprise</a>";
     }
-    else if ($resp < 4){
+    else if ($resp <= 4){
       echo "<a href=\"compte.php\">modifez les données</a>";
       echo "<a href=\"deconnexion.php\">Déconnexion</a>";
     }
@@ -27,7 +27,7 @@
       echo "<a href=\"ApprobationEntreprise.php\">Valider des entreprises</a>";
       if ($resp == 3) echo "<a href=\"updateAdmin.php\">Ajoutez/Supprimer des administrateur</a>";
     }
-    else { // $resp = 4
+    else if ($resp == 4){
       echo "<a href=\"espace_entreprise.php\">Espace entreprise</a>";
     }
     echo "</nav>";
