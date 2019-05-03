@@ -4,6 +4,6 @@
     $res = mysqli_query($connex, $req);
     if (mysqli_num_rows($res) == 0) return false;
     $an = mysqli_fetch_assoc($res);
-    return $an ['valid'];
+    return $an['valid'];
   }
 ?>

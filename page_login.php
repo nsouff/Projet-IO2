@@ -3,7 +3,6 @@ session_start();
 include_once('getResp.php');
 include_once('head.php');
 $resp = getResp();
-
 include_once('login.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
@@ -11,12 +10,12 @@ if($b) {
   $a=verifLogin($_POST['mail'],$_POST['mdp'],"user");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
-    $_SESSION['adresseRetour']='annonce.php?id=1';
     $infos=récupUser($_POST['mail']);
     $_SESSION['prénom']=$infos['first_name'];
     $_SESSION['nom']=$infos['last_name'];
     $_SESSION['id']=$infos['id'];
     $_SESSION['level']=$infos['level'];
+    if (empty($_SESSION['adresseRetour'])) $_SESSION['adresseRetour']='index.php'
     $return='Location: '.$_SESSION['adresseRetour'];
     header($return);
     exit();

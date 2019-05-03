@@ -4,7 +4,6 @@
   function aff_annonce_detail($connex, $id){
     $req = "SELECT * FROM announce WHERE id=$id";
     $res = mysqli_query($connex, $req);
-    if (!$res) echo "erreur";
     else if (mysqli_num_rows($res) == 0) echo "aucun id ne correspond";
     else {
       $an = mysqli_fetch_assoc($res);

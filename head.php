@@ -24,8 +24,8 @@
     }
     if ($resp == 2 || $resp == 3){
       echo "<a href=\"ApprobationAnnonces.php\">Valider des annonces</a>";
-      echo "<a href=\"ApprobationEntreprise.php\">Valider des entreprises</a>";
-      if ($resp == 3) echo "<a href=\"updateAdmin.php\">Ajoutez/Supprimer des administrateur</a>";
+      echo "<a href=\"ApprobationEntreprises.php\">Valider des entreprises</a>";
+      if ($resp == 3) echo "<a href=\"EspaceRoot.php\">Ajoutez/Supprimer des administrateur</a>";
     }
     else if ($resp == 4){
       echo "<a href=\"espace_entreprise.php\">Espace entreprise</a>";
