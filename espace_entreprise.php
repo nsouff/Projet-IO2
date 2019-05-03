@@ -23,8 +23,10 @@
         $res = getAnnounce($connex, $_SESSION['announcer_name']);
         while ($ligne = mysqli_fetch_assoc($res)){
           echo "Pour l'annonce: \n";
+          echo "<ul>";
           affiche_annonce($ligne);
           affiche_postulant($connex, $ligne['id']);
+          echo "</ul>";
         }
       }
      ?>

@@ -36,7 +36,7 @@
      <?php aff_annonce_detail($connex, $announce_id); ?>
      <?php if ($b) echo "enregistré!"; ?>
      <?php if ($resp == 1 && can_postule($connex, $user_id, $announce_id)): ?>
-       <form action=<?php echo "annonce.php?id=$user_id"; ?> method="post" enctype="multipart/form-data">
+       <form action=<?php echo "annonce.php?id=$announce_id"; ?> method="post" enctype="multipart/form-data">
          <label for="CV">CV: </label>
          <input type="file" name="CV" id="CV" required>
          <label for="Motiv">Lettre de motivation: </label>

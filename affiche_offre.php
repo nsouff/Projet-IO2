@@ -7,7 +7,10 @@
     foreach ($tab as $value) {
       foreach ($value as $val) {
         if ($i >= $n)  break;
+        echo "<ul class=\"annonce\">";
         affiche_annonce($val);
+        echo "<li><a href=\"annonce.php?id=".$val['id']."\">Voir plus/Postuler</a></li>";
+        echo "</ul>";
         $i++;
       }
       if ($i >= $n) break;

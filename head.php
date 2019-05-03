@@ -27,6 +27,9 @@
       echo "<a href=\"ApprobationEntreprise.php\">Valider des entreprises</a>";
       if ($resp == 3) echo "<a href=\"updateAdmin.php\">Ajoutez/Supprimer des administrateur</a>";
     }
+    else { // $resp = 4
+      echo "<a href=\"espace_entreprise.php\">Espace entreprise</a>";
+    }
     echo "</nav>";
     echo "</header>";
 
