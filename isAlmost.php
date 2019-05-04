@@ -17,7 +17,7 @@
     if ($l == 1) return 2;
     similar_text($var, $fixe, $perc1);
     similar_text($fixe, $var, $perc2);
-    if ($perc1 > $perc2) $perc = $prec1;
+    if ($perc1 > $perc2) $perc = $perc1;
     else $perc = $perc2;
     if ($perc >= 90 || $l <= 3) return 1;
     if ($perc >= 70 || $l < 5) return 0;
