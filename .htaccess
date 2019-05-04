@@ -1,4 +1,4 @@
-ErrorDocument 404 /Projet-IO2/error404.html
+ErrorDocument 404 /Projet-IO2/error404.php
 RedirectMatch 404 /Projet-IO2/\.git
 RedirectMatch 404 /Projet-IO2/CV/index.html
 RedirectMatch 404 /Projet-IO2/Motiv/index.html
