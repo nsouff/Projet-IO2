@@ -5,15 +5,12 @@
    * $ln le nom
    * $em l'email
    * $ph le numéro de télephone
-   * $reg l'id d'une région,
-   * $dep l'id d'un département
-   * $cit l'id d'une ville
    */
 
-  function save_user($connex, $fn, $ln, $em, $ph, $reg, $dep, $cit, $pass){
+  function save_user($connex, $fn, $ln, $em, $ph, $pass){
     if (known_email($connex, $em)) echo "Vous êtes déjà inscrit";
     else {
-      $req = "INSERT INTO user (first_name, last_name, email, phone_number, region_id, departement_id, city_id, password) VALUES (\"$fn\", \"$ln\", \"$em\", $ph, $reg, \"$dep\", $cit, \"$pass\")";
+      $req = "INSERT INTO user (first_name, last_name, email, phone_number, password) VALUES (\"$fn\", \"$ln\", \"$em\", \"$ph\", \"$pass\")";
       $res = mysqli_query($connex, $req);
       if (!$res) echo "erreur";
       else echo "enregistré";
