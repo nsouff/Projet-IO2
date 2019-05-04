@@ -5,18 +5,24 @@
   // $tab est un tableau de tableau de tableau, il contient 4 tableau le premier contient les offres les plus pertinentes et le dernier celles qui le sont moins
 
   function affiche_offre($tab, $n){
-    $i = 20*$n;
-    $m = 20 * ($n + 1);
+    $i = 0;
+    $min = 20 * ($n - 1);
+    $max = 20 * ($n);
+
+    // $b nous dira si on a tout afficher
+
     foreach ($tab as $value) {
       foreach ($value as $val) {
-        if ($i >= $m || $i < 20*$n) break;
-        echo "<ul class=\"annonce\">";
-        affiche_annonce($val);
-        echo "<li><a href=\"annonce.php?id=".$val['id']."\">Voir plus/Postuler</a></li>";
-        echo "</ul>";
+        if ($i < $max && $i >= $min){
+          echo "<ul class=\"annonce\">";
+          affiche_annonce($val);
+          echo "<li><a href=\"annonce.php?id=".$val['id']."\">Voir plus/Postuler</a></li>";
+          echo "</ul>";
+        }
         $i++;
       }
-      if ($i >= $m || $i < 20*$n) break;
+
     }
+    return ($i >= $max);
   }
  ?>

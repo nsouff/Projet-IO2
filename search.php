@@ -9,10 +9,10 @@
   include_once('getResp.php');
   include_once('head.php');
   $_SESSION['adresseRetour'] = 'search.php';
-  $b = (isset($_GET['key']) && isset($_GET['Où']));
+  $b = (isset($_GET['key']) && isset($_GET['Où']) && !empty($_GET['Où']));
   if ($b){
     // Lorsqu'on à $b on à une recherche qui vient de l'index du site
-    
+
     $key = $_GET['key'];
     $où = $_GET['Où'];
     $_SESSION['adresseRetour'] .= '?key='.$key.'&Où='.$où;
@@ -29,60 +29,34 @@
   <body>
     <?php
       head();
-      if (isset($_GET['key'])){
-        if (isset($_GET['Où'])){ // i.e on a $b true
-          $i = locate($connex, $où);
-          if ($i != -1) $id = getId($connex, $où, $i);
-          switch ($i) {
-            case -1: erreur(); break;
-            case 0: offre_search($connex, $key, "", $id, "", "", "", "", 20); break;
-            case 1: offre_search($connex, $key, "", "", $id, "", "", "", 20); break;
-            case 2: offre_search($connex, $key, "", "", "", $id, "", "", 20); break;
-          }
+      if ($b){
+        $i = locate($connex, $où);
+        if ($i != -1) $id = getId($connex, $où, $i);
+        switch ($i) {
+          case -1: erreur(); break;
+          case 0: offre_search($connex, $key, "", $id, "", "", "", "", 20); break;
+          case 1: offre_search($connex, $key, "", "", $id, "", "", "", 20); break;
+          case 2: offre_search($connex, $key, "", "", "", $id, "", "", 20); break;
         }
-        if (!isset($_GET['début']) || !isset($_GET['fin'])) header('Location: search.php'); // Si l'utilisateur ne tape pas ce qu'il veut dans la barre de recherche il devrait être set (mais peuvent être empty)
-        if (isset($_GET['cities'])){
-
-          if (isset($_GET['type'])){
-            offre_search($connex, $_GET['key'], $_GET['type'], "", "", $_GET['cities'], $_GET['début'], $_GET['fin'], 20);
-          }
-
-          else {
-            offre_search($connex, $_GET['key'], "", "", "", $_GET['cities'], $_GET['début'], $_GET['fin'], 20);
-          }
-
-        }
-
-        else if (isset($_GET['departements'])){
-
-          if (isset($_GET['type'])){
-            offre_search($connex, $_GET['key'], $_GET['type'], "", $_GET['departemnts'], "", $_GET['début'], $_GET['fin'], 20);
-          }
-
-          else {
-            offre_search($connex, $_GET['key'], "", "", $_GET['departemnts'], "", $_GET['début'], $_GET['fin'], 20);
-          }
-
-          else if (isset($_GET['regions'])){
-
-            if (isset($_GET['type'])){
-              offre_search($connex, $_GET['key'], $_GET['type'], $_GET['regions'], "", "", $_GET['début'], $_GET['fin'], 20);
-            }
-
-            else {
-              offre_search($connex, $_GET['key'], "", $_GET['regions'], "", "", $_GET['début'], $_GET['fin'], 20);
-            }
-          }
-
-        else {
-          if isset($_GET['type']){
-            offre_search($connex, $_GET['key'], $_GET['type'], "", "", "", $_GET['début'], $_GET['fin'], 20);
-          }
-          else {
-            offre_search($connex, $_GET['key'], "", "", "", "", $_GET['début'], $_GET['fin'], 20);
-          }
-        }
-
+      }
+      else {
+        if (isset($_GET['key'])) $key = $_GET['key'];
+        else $key = null;
+        if (isset($_GET['type'])) $type = $_GET['type'];
+        else $type = null;
+        if (isset($_GET['regions'])) $regions = $_GET['regions'];
+        else $regions = null;
+        if (isset($_GET['departements'])) $dep = $_GET['departements'];
+        else $dep = null;
+        if (isset($_GET['cities'])) $cit = $_GET['cities'];
+        else $cit = null;
+        if (isset($_GET['début'])) $début = $_GET['début'];
+        else $début = null;
+        if (isset($_GET['type'])) $fin = $_GET['fin'];
+        else $fin = null;
+        if (isset($_GET['pages'])) $n = $_GET['pages'];
+        else $n = 1;
+        offre_search($connex, $key, $type, $regions, $dep, $cit, $début, $fin, $n);
       }
 
       echo "<h2>Filtre</h2>";

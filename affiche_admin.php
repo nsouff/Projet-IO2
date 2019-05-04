@@ -5,7 +5,7 @@ function afficheAdmin($connex) {
   if(!$resultat) exit();
   else {
     while($ligne=mysqli_fetch_assoc($resultat)) {
-      echo "<tr><td>".$ligne['first_name']."</td><td>".$ligne['last_name']."</td><td>".$ligne['email']."</td><td><input type=\"radio\" name=\"".$ligne['id']."\" value=\"prom\"></td></tr>";
+      echo "<tr><td>".$ligne['first_name']."</td><td>".$ligne['last_name']."</td><td>".$ligne['email']."</td><td><input type=\"radio\" name=\"".$ligne['id']."\" value=\"retro\"></td></tr>";
     }
   }
 

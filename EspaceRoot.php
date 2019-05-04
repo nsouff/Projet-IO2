@@ -35,14 +35,15 @@ if($b) {
    </head>
    <body>
      <?php head(); ?>
-     <form action=ApprobationAnnonces.php method=post>
+     <form action=EspaceRoot.php method=post>
      <table class="tftable" border="1">
-       <tr><th>Prénom</th><th>Nom de famille</th><th>Email</th><th>Promouvoir</th><th>Fin du contrat</th><th>Intitulé du job</th><th>Annonce détaillée</th><th>Valider</th><th>Supprimer</th></tr>
+       <tr><th>Prénom</th><th>Nom de famille</th><th>Email</th><th>Rétrograder</th></tr>
        <?php afficheAdmin($connex); ?>
      </table>
        <br>
        <input type="text" name="prom" id="prom">
        <label for="prom">Rentrez ici le mail de l'utilisateur que vous voulez promouvoir administrateur:</label>
+       <input type="submit">
      </form>
    </body>
  </html>
