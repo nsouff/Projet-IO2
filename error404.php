@@ -7,6 +7,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <style media="screen">
       body{ text-align: center;}
     </style>

@@ -27,6 +27,7 @@ foreach($_POST as $key => $val) {
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
      <title>Approuver les annonces en attente</title>
    </head>
    <body>

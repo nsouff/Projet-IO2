@@ -25,6 +25,7 @@
     <meta charset="utf-8">
     <title>SITE - emploie</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
   </head>
   <body>
     <?php

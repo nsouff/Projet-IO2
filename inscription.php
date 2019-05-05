@@ -17,6 +17,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>SITE - inscription</title>
   </head>
   <body>
