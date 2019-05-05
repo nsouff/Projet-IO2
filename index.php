@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>NOM DU SITE</title>
   </head>
   <body>
@@ -25,7 +25,10 @@
           <label for="Où"><h2>Où</h2></label>
           <input class="Où" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
           <input type="hidden" name="pages" value="1">
-          <input type="submit" value="Chercher">
+        </div>
+        <div class="container">
+          <input class="chercher" type="submit" value="Chercher">
+          
         </div>
       </form>
     </div>
