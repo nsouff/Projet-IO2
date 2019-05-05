@@ -4,19 +4,21 @@
     $resp = getResp();
     echo "<header class=\"menu\">";
     echo "<h1><a href=\"index.php\">NOM DU SITE</a></h1>";
-    echo "<nav class=\"compte\">";
+    if ($resp != 0) echo "<nav class=\"compte\">";
     if ($resp == 0){
+      echo "<nav class=\"non_logged\">";
       echo "<a href=\"inscription.php\">Inscription</a>";
       echo "<a href=\"page_login.php\">Connexion</a>";
       echo "<a href=\"inscription_entr.php\">Entrprise? Inscrivez-vous</a>";
       echo "<a href=\"connexionEntreprise.php\">Connexion entreprise</a>";
+      echo "</nav>";
     }
     else if ($resp < 4){
       echo "<a href=\"compte.php\">modifez les données</a>";
     }
     else echo "<a href=\"compte_entr.php\">Compte</a>";
     if ($resp != 0) echo "<a href=\"deconnexion.php\">Déconnexion</a>";
-    echo "</nav>";
+    if ($resp != 0) echo "</nav>";
     echo "<nav class=\"option\">";
     if ($resp == 1) {
       echo "<a href=\"search.php\">Trouver un emploie</a>";
