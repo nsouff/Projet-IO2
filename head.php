@@ -13,11 +13,11 @@
     }
     else if ($resp < 4){
       echo "<a href=\"compte.php\">modifez les données</a>";
-      echo "<a href=\"deconnexion.php\">Déconnexion</a>";
     }
     else echo "<a href=\"compte_entr.php\">Compte</a>";
+    if ($resp != 0) echo "<a href=\"deconnexion.php\">Déconnexion</a>";
     echo "</nav>";
-    echo "<nav>";
+    echo "<nav class=\"option\">";
     if ($resp == 1) {
       echo "<a href=\"search.php\">Trouver un emploie</a>";
     }
