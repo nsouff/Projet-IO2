@@ -11,7 +11,7 @@
       echo "<a href=\"inscription_entr.php\">Entrprise? Inscrivez-vous</a>";
       echo "<a href=\"connexionEntreprise.php\">Connexion entreprise</a>";
     }
-    else if ($resp <= 4){
+    else if ($resp < 4){
       echo "<a href=\"compte.php\">modifez les données</a>";
       echo "<a href=\"deconnexion.php\">Déconnexion</a>";
     }
@@ -19,7 +19,6 @@
     echo "</nav>";
     echo "<nav>";
     if ($resp == 1) {
-
       echo "<a href=\"search.php\">Trouver un emploie</a>";
     }
     if ($resp == 2 || $resp == 3){
@@ -29,6 +28,7 @@
     }
     else if ($resp == 4){
       echo "<a href=\"espace_entreprise.php\">Espace entreprise</a>";
+      echo "<a href=\"ajoutAnnonce.php\">Ajoutez une annonce</a>";
     }
     echo "</nav>";
     echo "</header>";
