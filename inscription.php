@@ -24,22 +24,26 @@
     <?php head(); ?>
     <?php if ($b): save_user($connex, $fn, $ls, $em, $ph, $pass); ?>
     <?php else: ?>
-      <form class="inscription" action="inscription.php" method="post">
-        <label for="fn">Prénom: </label>
-        <input type="text" name="first_name" id="fn" required>
-        <label for="ln">Nom: </label>
-        <input type="text" name="last_name" id="ln" required>
-        <label for="email">Email: </label>
-        <input type="email" name="email" required>
-        <label for="phone">Téléphone: </label>
-        <input type="tel" name="phone" pattern="0[0-9]{9}" id="phone" required>
-        <label for="password">Mot de passe: </label>
-        <input type="password" name="password" id="password" required>
-        <label for="age">Vous confirmez avoir plus de 18ans</label>
-        <input type="radio" id="age" required>
-        <input type="submit" name="Envoyer">
-
-        </form>
+      <div class="inscription">
+        <form action="inscription.php" method="post">
+          <fieldset>
+            <legend><strong>Coordronées</strong></legend>
+            <label for="fn">Prénom: </label>
+            <input type="text" name="first_name" id="fn" required>
+            <label for="ln">Nom: </label>
+            <input type="text" name="last_name" id="ln" required>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+            <label for="phone">Téléphone: </label>
+            <input type="tel" name="phone" pattern="0[0-9]{9}" id="phone" required>
+          </fieldset>
+          <label for="password">Mot de passe: </label>
+          <input type="password" name="password" id="password" required>
+          <label for="age">Vous confirmez avoir plus de 18ans</label>
+          <input type="radio" id="age" required>
+          <input type="submit" name="Envoyer">
+          </form>
+        </div>
       <?php endif; ?>
   </body>
 </html>

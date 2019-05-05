@@ -34,7 +34,7 @@ header nav{
 div.annonce + div.annonce{
   clear: left;
 }
-h1 {
+header h1 {
     text-align: center;
     padding-top: 10px;
 }
@@ -55,7 +55,7 @@ header nav a:hover{
   margin-top: 200px;
   text-align: center;
 }
-.search input{
+.search input {
   border-radius: 50px;
   width: 300px;
   height: 30px;
@@ -68,7 +68,6 @@ header nav a:hover{
   border-radius: 50px;
   border: outset #0a9023 2px;;
 }
-.search
 .Où {
   float: left;
 }
@@ -108,8 +107,49 @@ input.chercher {
   box-shadow: -10px 0px 10px 1px #aaaaaa;
 }
 .inscription{
-
+  width: 800px;
+  margin: auto;
+  margin-top: 200px;
+  height: 250px;
+  background-image: linear-gradient(to bottom, #0a9023, #38bc51);
+  border: outset;
+  border-radius: 10px;
+  /* position: relative; */
+  /* text-align: center; */
 }
 .inscription label{
+  float: left;
+}
+.inscription fieldset:nth-child(2n + 1){
+  clear: left;
+}
 
+.inscription fieldset{
+  height: 150px;
+  width: 600px;
+}
+.inscription fieldset *{
+  display: block;
+
+}
+.inscription input{
+  width: 120px;
+  position: relative;
+  float: left;
+}
+.inscription fieldset input{
+  display: inline-block;
+}
+.inscription fieldset:nth-child(2n){
+  float: left;
+}
+.inscription input[type='submit']{
+  cursor: pointer;
+  border-radius: 10px;
+  height: 25px;
+  float: right;
+}
+.inscription input[type='submit']:hover{
+  background-color: #8fc4d8;
+  border-style: inset;
 }
