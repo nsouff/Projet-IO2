@@ -4,13 +4,13 @@ include_once('deroul.php');
 include_once('connex_BD.php');
 include_once('save.php');
 include_once('head.php');
+include_once('getResp.php');
 $_SESSION['adresseRetour'] = 'ajoutAnnonce.php';
 $connex=connex_BD();
-$a=isset($_SESSION['announcer_name']);
+$a=(getResp() == 4);
 if($a) { $announcer=$_SESSION['announcer_name']; }
 $b=(isset($_POST['short']) && isset($_POST['long']) && isset($_POST['type']) && isset($_POST['start']) && isset($_POST['regions']) && isset($_POST['departements']) && isset($_POST['cities']) && isset($_POST['end']) && isset($_POST['job']));
 if($b) {
-  echo $_POST['start'];
   $announcer = mysqli_real_escape_string($connex, $_SESSION['announcer_name']);
   $sh = mysqli_real_escape_string($connex, $_POST['short']);
   $lg = mysqli_real_escape_string($connex, $_POST['long']);
@@ -21,10 +21,6 @@ if($b) {
   $dep = mysqli_real_escape_string($connex, $_POST['departements']);
   $cit = mysqli_real_escape_string($connex, $_POST['cities']);
   $job = mysqli_real_escape_string($connex, $_POST['job']);
-  save2(connex_BD(),$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit);
-  $c='index.php';
-  $d='Location: '.$c;
-  header($d);
 }
  ?>
  <!DOCTYPE html>
@@ -36,43 +32,47 @@ if($b) {
    </head>
    <body>
      <?php head(); ?>
-     <?php if ($a): ?>
-     <form class="inscription" action="ajoutAnnonce.php" method="post">
-       <label for="sd">Courte description de l'annonce: </label>
-       <input type="text" name="short" id="sd">
-       <br>
-       <label for="ld">Longue description de l'annonce: </label>
-       <textarea name=long id="ld"> </textarea>
-       <br>
-       <input type="radio" name="type" value="CDD"> CDD<br>
-       <input type="radio" name="type" value="CDI"> CDI<br>
-       <br>
-       <label for="start">Début du travail</label>
-       <input type="date" name="start" id="start">
-       <br>
-       <label for="end">Fin du travail</label>
-       <input type="date" name="end" id="end">
-       <br>
-       <label for="job">Appellation du travail:</label>
-       <input type="text" name="job" id="job">
-       <br>
-       <?php
-         deroul($connex, "regions");
-         echo "<br>";
-         deroul($connex, "departements");
-         echo "<br>";
-         deroul($connex, "cities");
-         echo "<br>";
-         ?>
-       <input type="submit">
-     </form>
-
-         <?php endif; ?>
-         <?php if(!$a) {
-           echo "<h1>Erreur critique</h1>";
-           echo "<h4>Vous n'êtes pas connectés à votre compte entreprise et ne pouvez pas ajouter une annonce. <br>";
-           echo "<a href=connexionEntreprise.php>Connectez vous ici</a>";
-         }
-         ?>
+     <?php if ($a && $_SESSION['valid']): ?>
+       <?php if ($b) save2($connex,$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit); ?>
+        <form class="inscription" action="ajoutAnnonce.php" method="post">
+          <label for="sd">Courte description de l'annonce: </label>
+          <input type="text" name="short" id="sd">
+          <br>
+          <label for="ld">Longue description de l'annonce: </label>
+          <textarea name=long id="ld"> </textarea>
+          <br>
+          <label for="CDD">CDD</label>
+          <input id="CDD" type="radio" name="type" value="CDD" required><br>
+          <label for="CDI">CDI</label>
+          <input id="CDI" type="radio" name="type" value="CDI"><br>
+          <br>
+          <label for="start">Début du travail</label>
+          <input type="date" name="start" id="start" <?php echo "min=\"".date('Y-m-d')."\""; ?>>
+          <br>
+          <label for="end">Fin du travail</label>
+          <input type="date" name="end" id="end" <?php echo "min=\"".date('Y-m-d')."\""; ?>>
+          <br>
+          <label for="job">Appellation du travail:</label>
+          <input type="text" name="job" id="job" required>
+          <br>
+          <?php
+            deroul($connex, "regions");
+            echo "<br>";
+            deroul($connex, "departements");
+            echo "<br>";
+            deroul($connex, "cities");
+            echo "<br>";
+            ?>
+          <input type="submit"><input type="reset">
+       </form>
+      <?php elseif ($a): ?>
+        <h3>Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus bref délais</h3>
+     <?php endif; ?>
+     <?php if(!$a) {
+       echo "<h1>Erreur critique</h1>";
+       echo "<h4>Vous n'êtes pas connectés à votre compte entreprise et ne pouvez pas ajouter une annonce. <br>";
+       echo "<a href=connexionEntreprise.php>Connectez vous ici</a>";
+     }
+     ?>
    </body>
  </html>
