@@ -30,12 +30,13 @@ if($b) {
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Page de Login</title>
   </head>
   <body>
     <?php
     head();
+    echo "<div class=\"login\">";
     if ($resp == 4){
       echo "<h1>Vous êtes connecté en tant qu'entreprise</h1>\n<br>\n<a href=\"deconnexion.php\">voulez vous vous deconnectez?</a>";
     }
@@ -43,7 +44,7 @@ if($b) {
       echo "<h1>Vous êtes déjà connectez</h1><br><a href=\"compte.php\">Accédez à votre compte</a>";
     }
     else {
-      if (!$a) echo "<h4>Identifiants incorrect</h4>";
+      if (!$a && $b) echo "<h4>Identifiants incorrect</h4>";
       if (!$b || !$a) {
         echo '<h1> Connectez vous à votre compte Chercheur d\'emploi </h1>
         <form action=page_login.php method=POST>
@@ -55,13 +56,13 @@ if($b) {
         <br>
         <input type=submit>
         </form>
-        Pas encore inscrit? <a href="inscription.php">Inscrivez vous</a>'; }
+        <p>Pas encore inscrit? <a href="inscription.php">Inscrivez vous</a></p>'; }
       if (!$a) {
 
       }
     }
 
     ?>
-
+  </div>
   </body>
 </html>
