@@ -18,7 +18,6 @@ if($b) {
     if (empty($_SESSION['adresseRetour'])) $_SESSION['adresseRetour']='index.php';
     $return='Location: '.$_SESSION['adresseRetour'];
     header($return);
-    exit();
   }
 }
  ?>
@@ -37,14 +36,14 @@ if($b) {
     <?php
     head();
     if ($resp == 4){
-      echo "<h1>Vous êtes connecté en tant qu'entreprise</h1>\n<br>\n<a href=\"compte.php\">voulez vous vous deconnectez?</a>";
+      echo "<h1>Vous êtes connecté en tant qu'entreprise</h1>\n<br>\n<a href=\"deconnexion.php\">voulez vous vous deconnectez?</a>";
     }
     else if ($resp <= 3 && $resp >= 1){
       echo "<h1>Vous êtes déjà connectez</h1><br><a href=\"compte.php\">Accédez à votre compte</a>";
     }
     else {
-
-      if (!$b) {
+      if (!$a) echo "<h4>Identifiants incorrect</h4>";
+      if (!$b || !$a) {
         echo '<h1> Connectez vous à votre compte Chercheur d\'emploi </h1>
         <form action=page_login.php method=POST>
         <label for="e">Adresse mail:</label>
@@ -54,11 +53,10 @@ if($b) {
         <input type=password name=mdp id=a>
         <br>
         <input type=submit>
-        </form>'; }
-      if ($a) {
-          echo $_SESSION['prénom'];
-          echo $_SESSION['nom'];
-          echo $_SESSION['mail'];
+        </form>
+        Pas encore inscrit? <a href="inscription.php">Inscrivez vous</a>'; }
+      if (!$a) {
+
       }
     }
 
