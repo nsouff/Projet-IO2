@@ -7,9 +7,9 @@ include_once('head.php');
 include_once('getResp.php');
 $resp = getResp();
 if ($resp != 2 && $resp != 3){
-  if isset($_SESSION['adresseRetour']) $header = 'Location: '.$_SESSION['adresseRetour'];
+  if (isset($_SESSION['adresseRetour'])) $header = 'Location: '.$_SESSION['adresseRetour'];
   else $header = 'Location: index.php';
-  header($header)
+  header($header);
 }
 $connex=connex_BD();
 foreach($_POST as $key => $val) {
@@ -28,16 +28,18 @@ foreach($_POST as $key => $val) {
  <html lang="fr" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
      <title>Approuver les annonces en attente</title>
    </head>
    <body>
      <?php head(); ?>
        <form action=ApprobationEntreprises.php method=post>
        <table class="tftable" border="1">
-         <tr><th>Nom de l'Entreprise</th><th>Adresse</th><th>Email</th><th>Valider</th><th>Supprimer</th></tr>
+         <tr><th>Nom de l'Entreprise</th><th>Email</th><th>Valider</th><th>Supprimer</th></tr>
          <?php EntrepriseNonValidé(connex_BD()); ?>
        </table>
-     <input type="submit" name="Envoyer">
+     <input type="submit" value="Envoyer">
+     <input type="reset">
      </form>
    </body>
  </html>

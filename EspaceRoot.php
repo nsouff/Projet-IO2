@@ -41,9 +41,9 @@ if($b) {
        <?php afficheAdmin($connex); ?>
      </table>
        <br>
-       <input type="text" name="prom" id="prom">
        <label for="prom">Rentrez ici le mail de l'utilisateur que vous voulez promouvoir administrateur:</label>
-       <input type="submit">
+       <input type="text" name="prom" id="prom">
+       <input type="submit"><input type="reset">
      </form>
    </body>
  </html>
