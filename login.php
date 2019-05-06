@@ -21,7 +21,7 @@ function récupUser($mail) {
 
 }
 function récupAnnouncer($mail) {
-  $req='select name from announcer where email=\''.$mail.'\'';
+  $req='select name, valid from announcer where email=\''.$mail.'\'';
   $resultat=mysqli_query(connex_BD(),$req);
   $result=mysqli_fetch_assoc($resultat);
   return $result;
