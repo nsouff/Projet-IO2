@@ -2615,28 +2615,28 @@ INSERT INTO  cities (name, departement_id)
               ('Yzeure', '03'),
               ('Zillisheim', '68');
 
-INSERT INTO announcer (name, email, password)
+INSERT INTO announcer (name, email, password, valid)
       VALUES
-            ('annonceur1', 'a@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur2', 'b@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur3', 'c@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur4', 'd@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur5', 'e@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur6', 'f@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur7', 'g@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur8', 'h@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur9', 'i@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur10', 'j@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur11', 'k@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur12', 'l@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur13', 'm@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur14', 'n@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur15', 'o@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur16', 'p@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur17', 'q@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur18', 'r@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur19', 's@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'), -- mdp = 's'
-            ('annonceur20', 't@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6'); -- mdp = 's'
+            ('annonceur1', 'a@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur2', 'b@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur3', 'c@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur4', 'd@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur5', 'e@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur6', 'f@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur7', 'g@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur8', 'h@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur9', 'i@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur10', 'j@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur11', 'k@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur12', 'l@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur13', 'm@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur14', 'n@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur15', 'o@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur16', 'p@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 1), -- mdp = 's'
+            ('annonceur17', 'q@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur18', 'r@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur19', 's@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('annonceur20', 't@gmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0); -- mdp = 's'
 
   INSERT INTO announce (announcer, short_description, long_description, type, job, region_id, departement_id, city_id, valid)
       VALUES
