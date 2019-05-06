@@ -6,6 +6,9 @@ include_once('getResp.php');
 include_once('modifCompte.php');
 $resp=getResp();
 $connex=connex_BD();
+$_SESSION ['adresseRetour']='index.php';
+$adresseRetour=$_SESSION['adresseRetour'];
+
 $b=isset($_POST['mdp']) && isset($_POST['numero']);
 if($resp==0 || $resp==4) {
    header('Location : index.php');
@@ -19,6 +22,8 @@ if($b) {
   $mdp=password_hash($_POST['mdp'], PASSWORD_DEFAULT);
   $numero=mysqli_real_escape_string($connex,$_POST['numero']);
   modifCompte($connex,$mdp,$numero,$id);
+  $_SESSION['numero']=$numero;
+  header('Location: '.$adresseRetour);
 } ?>
 
 <!DOCTYPE html>
@@ -39,5 +44,7 @@ if($b) {
       <input type='text' name='numero' value=<?php echo "".$ancien; ?>>
       <input type='submit'>
     </form>
+    <br><br><br>
+    <a href="suppressionUser.php">Cliquez ici pour supprimer votre compte </a>
   </body>
 </html>

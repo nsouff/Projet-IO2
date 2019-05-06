@@ -15,6 +15,7 @@ if($b) {
     $_SESSION['nom']=$infos['last_name'];
     $_SESSION['id']=$infos['id'];
     $_SESSION['level']=$infos['level'];
+    $_SESSION['numero']=$infos['phone_number'];
     if (empty($_SESSION['adresseRetour'])) $_SESSION['adresseRetour']='index.php';
     $return='Location: '.$_SESSION['adresseRetour'];
     header($return);

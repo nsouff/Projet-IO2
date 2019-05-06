@@ -10,14 +10,14 @@
   include_once('head.php');
   $_SESSION['adresseRetour'] = 'search.php';
   $b = (isset($_GET['key']) && isset($_GET['Où']) && !empty($_GET['Où']));
+  $connex = connex_BD();
   if ($b){
     // Lorsqu'on à $b on à une recherche qui vient de l'index du site
 
-    $key = $_GET['key'];
-    $où = $_GET['Où'];
+    $key = mysqli_real_escape_string($connex, $_GET['key']);
+    $où = mysqli_real_escape_string($connec, $_GET['Où']);
     $_SESSION['adresseRetour'] .= '?key='.$key.'&Où='.$où;
   }
-  $connex = connex_BD();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

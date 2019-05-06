@@ -2,14 +2,16 @@
 
 //Ici on a deux fonctions permettant de au choix supprimer ou valider une entreprise en fonction de son ID.
 
-function supprEntr($connex,$id) {
-  $req='DELETE FROM announcer WHERE name=\''.$id.'\'';
+function supprEntr($connex,$name) {
+  $name=str_replace("_"," ",$name);
+  $req='DELETE FROM announcer WHERE name=\''.$name.'\'';
   mysqli_query($connex,$req);
 
 }
 
-function validEntr($connex,$id) {
-  $req='UPDATE announcer SET valid=true WHERE name=\''.$id.'\'';
+function validEntr($connex,$name) {
+  $name=str_replace("_"," ",$name);
+  $req='UPDATE announcer SET valid=true WHERE name=\''.$name.'\'';
   mysqli_query($connex,$req);
 }
 
