@@ -8,12 +8,12 @@
    */
 
   function save_user($connex, $fn, $ln, $em, $ph, $pass){
-    if (known_email($connex, $em)) echo "Vous êtes déjà inscrit";
+    if (known_email($connex, $em)) echo "<h3 class=\"center\">Vous êtes déjà inscrit</h3>";
     else {
       $req = "INSERT INTO user (first_name, last_name, email, phone_number, password) VALUES (\"$fn\", \"$ln\", \"$em\", \"$ph\", \"$pass\")";
       $res = mysqli_query($connex, $req);
-      if (!$res) echo "erreur";
-      else echo "enregistré";
+      if (!$res) echo "<h3 class=\"center\">Erreur</h3>";
+      else echo header('Location: page_login.php');
     }
   }
  ?>

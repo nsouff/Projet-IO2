@@ -119,43 +119,55 @@ input.chercher {
   background-image: linear-gradient(to bottom, #0a9023, #38bc51);
   border: outset;
   border-radius: 10px;
-  /* position: relative; */
-  /* text-align: center; */
+  position: relative;
 }
-.inscription label{
-  float: left;
-}
-.inscription fieldset:nth-child(2n + 1){
-  clear: left;
+.inscription form{
+  height: 250px;
 }
 
-.inscription fieldset{
-  height: 150px;
-  width: 600px;
+.inscription fieldset {
+  height: 120px;
+  width: 700px;
+  position: relative;
 }
-.inscription fieldset *{
-  display: block;
-
+.inscription fieldset > input{
+  position: absolute;
+  left: 120px;
+  height: 12px;
+  font-size: 0.8em;
+}
+.inscription input {
+  height: 10px;
+}
+.inscription fieldset > label{
+  position: absolute;
+  left: 20px;
 }
 .inscription input{
   width: 120px;
-  position: relative;
-  float: left;
+  position: absolute;
+  left: 200px;
 }
-.inscription fieldset input{
-  display: inline-block;
+.inscription >form > label{
+  position: absolute;
+  left: 20px;
 }
-.inscription fieldset:nth-child(2n){
-  float: left;
+.inscription > form > input[id]{
+  position: absolute;
+  left: 350px;
 }
 .inscription input[type='submit']{
+  position: absolute;
+  left: 600px;
+  bottom: 70px;
   cursor: pointer;
   border-radius: 10px;
+  margin-top: 20px;
   height: 25px;
-  float: right;
 }
 .inscription input[type='submit']:hover{
-  background-color: #8fc4d8;
+  background-color: #F7EA63;
+  color: #000000;
   border-style: inset;
 }
 .login{
