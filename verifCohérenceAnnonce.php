@@ -7,7 +7,6 @@
 function verifCohérenceAnnonce($connex,$reg,$depart,$city) {
   $req1='SELECT departement_id from cities WHERE id='.$city;
   $req2='SELECT region_id from departements WHERE id=\''.$depart.'\'';
-  echo $req2;
   $res1=mysqli_query($connex,$req1);
   $res2=mysqli_query($connex,$req2);
   $a=mysqli_fetch_assoc($res1);
