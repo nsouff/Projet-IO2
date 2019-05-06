@@ -10,6 +10,7 @@ header{
   position: relative;
   left: -10px;
   top: -21px;
+  height: 150px;
   width: 100%;
 }
 header h1 a{
@@ -42,6 +43,11 @@ header nav a:hover{
   border-radius: 40px;
   background-color: #F7EA63;
   color: black;
+}
+header .compte {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .go_top{
   position: fixed;

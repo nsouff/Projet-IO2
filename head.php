@@ -14,7 +14,7 @@
       echo "</nav>";
     }
     else if ($resp < 4){
-      echo "<a href=\"compte.php\">modifez les données</a>";
+      echo "<a href=\"compte.php\">Compte</a>";
     }
     else echo "<a href=\"compte_entr.php\">Compte</a>";
     if ($resp != 0) echo "<a href=\"deconnexion.php\">Déconnexion</a>";
