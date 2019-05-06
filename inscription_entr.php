@@ -27,19 +27,21 @@
     <?php if ($b): save_entr($connex, $n, $em, $pass)?>
 
     <?php else: ?>
-      <form action="inscription_entr.php" method="post">
-        <label for="name">Nom de l'entreprise: </label>
-        <input type="text" name="name" id="name" pattern="[^_]*">
-        <small>'_' est intérdit</small>
-        <br>
-        <label for="email">Email: </label>
-        <input type="email" name="email"id="email">
-        <br>
-        <label for="password">Mot de passe: </label>
-        <input type="password" name="password"  id="password">
-        <br>
-        <input type="submit">
-      </form>
+      <div class="inscription_entr">
+        <form action="inscription_entr.php" method="post">
+          <label for="name">Nom de l'entreprise: </label>
+          <input type="text" name="name" id="name" pattern="[^_]*">
+          <small>Le charchatère '_' est intérdit</small>
+          <br>
+          <label for="email">Email: </label>
+          <input type="email" name="email"id="email">
+          <br>
+          <label for="password">Mot de passe: </label>
+          <input type="password" name="password"  id="password">
+          <br>
+          <input type="submit">
+        </form>
+      </div>
   <?php endif; ?>
   </body>
 </html>

@@ -3,7 +3,7 @@
   function head(){
     $resp = getResp();
     echo "<header class=\"menu\">";
-    echo "<h1><a href=\"index.php\">NOM DU SITE</a></h1>";
+    echo "<h1><a href=\"index.php\">YES</a></h1>";
     if ($resp != 0) echo "<nav class=\"compte\">";
     if ($resp == 0){
       echo "<nav class=\"non_logged\">";
