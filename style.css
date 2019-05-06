@@ -190,5 +190,35 @@ ul > li > ul{
   padding: 8px;
   float: left;
   border: 1px solid black;
+  border-radius: 3px;
   background-color: white;
+}
+.ajoutAnnonce{
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 10px;
+  background-image: radial-gradient(circle, white, #8fc4d8);
+  border: 5px solid white;
+  border-radius: 10px;
+  text-align: center;
+}
+.ajoutAnnonce *{
+  margin: 5px;
+}
+.ajoutAnnonce input, .ajoutAnnonce select{
+  color: #0a9023;
+  width: 120px;
+  border-radius: 50px;
+
+}
+.ajoutAnnonce input[type="text"]{
+  width: 200px;
+}
+.bouton_ajout_annonce:hover{
+  background-color: #0a9023;
+  color: white;
+}
+.center{
+  text-align: center;
 }

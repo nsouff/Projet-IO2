@@ -38,7 +38,7 @@ if($b) {
      <?php if ($a && $_SESSION['valid']): ?>
        <?php
        if ($b && $verif) save2($connex,$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit);
-       else if ($b) echo "<h3>Erreur, il y a une incohérence dans le lieu que vous avez choisi</h4>";
+       else if ($b) echo "<h3 class=\"center\">Erreur, il y a une incohérence dans le lieu que vous avez choisi</h3>";
        ?>
         <form class="ajoutAnnonce" action="ajoutAnnonce.php" method="post">
           <label for="sd">Courte description de l'annonce: </label>
@@ -69,18 +69,18 @@ if($b) {
             deroul($connex, "cities");
             echo "<br>";
             ?>
-          <input type="submit"><input type="reset">
+          <input type="submit" value="Ajouter" class="bouton_ajout_annonce"><input type="reset" class="bouton_ajout_annonce">
        </form>
        <?php
      endif;
      if ($a && !$_SESSION['valid']):
        ?>
-        <h3>Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus bref délais</h3>
+        <h3 class="center">Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus bref délais</h3>
      <?php endif; ?>
      <?php if(!$a) {
-       echo "<h1>Erreur critique</h1>";
-       echo "<h4>Vous n'êtes pas connectés à votre compte entreprise et ne pouvez pas ajouter une annonce. <br>";
-       echo "<a href=connexionEntreprise.php>Connectez vous ici</a>";
+       echo "<h1 class=\"center\">Erreur critique</h1>";
+       echo "<h3 class=\"center\">Vous n'êtes pas connectés à votre compte entreprise et ne pouvez pas ajouter une annonce. <br>";
+       echo "<a href=connexionEntreprise.php>Connectez vous ici</a></h3>";
      }
      ?>
    </body>
