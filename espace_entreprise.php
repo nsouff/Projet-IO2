@@ -13,7 +13,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>SITE - espace entreprise</title>
   </head>
   <body>
@@ -21,14 +21,17 @@
     <?php
       if (getResp() != 4) echo "<h1>Vous n'êtes pas connecté</h1><a href=\"connexionEntreprise.php\">Connectez vous</a>";
       else {
+        echo "<div class=\"esapce_entreprise\">";
         $res = getAnnounce($connex, $_SESSION['announcer_name']);
         while ($ligne = mysqli_fetch_assoc($res)){
-          echo "Pour l'annonce: \n";
+          echo "<div class=\"annonce_postulant\"><strong>Pour l'annonce:</strong> \n";
           echo "<ul>";
           affiche_annonce($ligne);
           affiche_postulant($connex, $ligne['id']);
           echo "</ul>";
+          echo "</div>";
         }
+        echo "</div>";
       }
      ?>
   </body>
