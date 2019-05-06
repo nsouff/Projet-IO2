@@ -6,7 +6,6 @@ include_once('getResp.php');
 include_once('modifCompte.php');
 $resp=getResp();
 $connex=connex_BD();
-echo $resp;
 $b=isset($_POST['mdp']);
 if($resp!=4) {
    header('Location: index.php');
