@@ -13,7 +13,7 @@
       $req = "INSERT INTO user (first_name, last_name, email, phone_number, password) VALUES (\"$fn\", \"$ln\", \"$em\", \"$ph\", \"$pass\")";
       $res = mysqli_query($connex, $req);
       if (!$res) echo "<h3 class=\"center\">Erreur</h3>";
-      else echo header('Location: page_login.php');
+      else echo "<h3 class=\"center\">Inscription réussie! Vous pouvez désormais vous connecté";
     }
   }
  ?>
