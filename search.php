@@ -15,7 +15,7 @@
     // Lorsqu'on à $b on à une recherche qui vient de l'index du site
 
     $key = mysqli_real_escape_string($connex, $_GET['key']);
-    $où = mysqli_real_escape_string($connec, $_GET['Où']);
+    $où = mysqli_real_escape_string($connex, $_GET['Où']);
     $_SESSION['adresseRetour'] .= '?key='.$key.'&Où='.$où;
   }
 ?>
@@ -30,33 +30,34 @@
   <body>
     <?php
       head();
+      echo "<a href=\"#\" class=\"go_top\">^</a>";
       echo "<div class=\"res_search\">\n<h2>Résultat</h2>\n";
       if ($b){
         $i = locate($connex, $où);
         if ($i != -1) $id = getId($connex, $où, $i);
         switch ($i) {
-          case -1: echo "<h2>Le lieu que vous cherchez nous est inconnue</h2>"; break;
+          case -1: echo "<h3>Le lieu que vous cherchez nous est inconnue</h3>"; break;
           case 0: offre_search($connex, $key, "", $id, "", "", "", "", 1); break;
           case 1: offre_search($connex, $key, "", "", $id, "", "", "", 1); break;
           case 2: offre_search($connex, $key, "", "", "", $id, "", "", 1); break;
         }
       }
       else {
-        if (isset($_GET ['key'])) $key = $_GET['key'];
+        if (isset($_GET ['key'])) $key = mysqli_real_escape_string($connex, $_GET['key']);
         else $key = null;
-        if (isset($_GET['type'])) $type = $_GET['type'];
+        if (isset($_GET['type'])) $type = mysqli_real_escape_string($connex, $_GET['type']);
         else $type = null;
-        if (isset($_GET['regions'])) $regions = $_GET['regions'];
+        if (isset($_GET['regions'])) $regions = mysqli_real_escape_string($connex, $_GET['regions']);
         else $regions = null;
-        if (isset($_GET['departements'])) $dep = $_GET['departements'];
+        if (isset($_GET['departements'])) $dep = mysqli_real_escape_string($connex, $_GET['departements']);
         else $dep = null;
-        if (isset($_GET['cities'])) $cit = $_GET['cities'];
+        if (isset($_GET['cities'])) $cit = mysqli_real_escape_string($connex, $_GET['cities']);
         else $cit = null;
-        if (isset($_GET['début'])) $début = $_GET['début'];
+        if (isset($_GET['début'])) $début = mysqli_real_escape_string($connex, $_GET['début']);
         else $début = null;
-        if (isset($_GET['type'])) $fin = $_GET['fin'];
+        if (isset($_GET['type'])) $fin = mysqli_real_escape_string($connex, $_GET['fin']);
         else $fin = null;
-        if (isset($_GET['pages'])) $n = $_GET['pages'];
+        if (isset($_GET['pages'])) $n = mysqli_real_escape_string($connex, $_GET['pages']);
         else $n = 1;
         offre_search($connex, $key, $type, $regions, $dep, $cit, $début, $fin, $n);
       }
@@ -66,7 +67,7 @@
       echo "<h2>Filtre</h2>";
       echo "<form action=\"search.php\" method=\"get\">\n";
       echo "<input type=\"submit\" value=\"Chercher\" class=\"chercher_filtre\">";
-      echo "<input type=\"reset\">";
+      echo "<input type=\"reset\"><br>";
       echo "<label for=\"key\">Job</label><input type=\"text\" id=\"key\" name=\"key\">\n";
       print_filtre($connex);
       echo "</form>";
