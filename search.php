@@ -23,14 +23,14 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>SITE - emploie</title>
+    <title>Yes - Emploie</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
   <body>
     <?php
       head();
-      echo "<a href=\"#\" class=\"go_top\">^</a>";
+      echo "<a href=\"#\" class=\"go_top\">^^</a>";
       echo "<div class=\"res_search\">\n<h2>Résultat</h2>\n";
       if ($b){
         $i = locate($connex, $où);
@@ -68,7 +68,7 @@
       echo "<form action=\"search.php\" method=\"get\">\n";
       echo "<input type=\"submit\" value=\"Chercher\" class=\"chercher_filtre\">";
       echo "<input type=\"reset\"><br>";
-      echo "<label for=\"key\">Job</label><input type=\"text\" id=\"key\" name=\"key\">\n";
+      echo "<label for=\"key\"><strong>Job: </strong></label><input type=\"text\" id=\"key\" name=\"key\">\n";
       print_filtre($connex);
       echo "</form>";
       echo "</div>";

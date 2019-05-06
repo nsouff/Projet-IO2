@@ -45,7 +45,7 @@ if($b) {
       <br>
       <input type=submit>
     </form>';
-    echo "<p>pas encore inscrit? <a href=\"inscription_entr.php\">Inscrivez vous</a></p>";}
+    echo "<p>Pas encore inscrit? <a href=\"inscription_entr.php\">Inscrivez vous</a></p>";}
       ?>
     </div>
   </body>

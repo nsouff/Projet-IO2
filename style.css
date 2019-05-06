@@ -32,9 +32,6 @@ header nav{
   text-align: center;
   height: 40px;
 }
-div.annonce + div.annonce{
-  clear: left;
-}
 header h1 {
     text-align: center;
     padding-top: 10px;
@@ -50,10 +47,24 @@ header .compte {
   right: 5px;
 }
 input[type="submit"]{cursor: pointer;}
+
 .go_top{
   position: fixed;
   bottom: 50px;
   right: 50px;
+  background-color: #8fc4d8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #0a9023;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.go_top:hover{
+  background-color: #F7EA63;
+  color: black;
 }
 .search{
   margin: auto;
@@ -129,6 +140,7 @@ input.chercher {
   height: 120px;
   width: 700px;
   position: relative;
+  border-color: #FFFFFF;
 }
 .inscription fieldset > input{
   position: absolute;
@@ -139,6 +151,7 @@ input.chercher {
 .inscription input {
   height: 10px;
   color: #0a9023;
+  border-radius: 7px;
 }
 .inscription fieldset > label{
   position: absolute;
@@ -197,8 +210,42 @@ input.chercher {
   float: right;
   width: 50%;
 }
-.filtre ul{
-  list-style-type: none;
+.res_search ul{
+  list-style: none;
+}
+.res_search hr{
+  border: 0px;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+.filtre select{
+  background-color: #F7EA63;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.filtre input[type='submit'], .filtre input[type='reset']{
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  width: 200px;
+  height: 30px;
+  background-color: #F7EA63;
+  cursor: pointer;
+}
+.filtre input[type='submit']:hover, .filtre input[type='reset']:hover{
+  border: none;
+  background-image: linear-gradient(to right, #0a9023, #38bc51);
+  color: #FFFFFF;
+}
+.filtre input[type='reset']{
+  margin-left: 80px;
+}
+.filtre #key{
+  border-radius: 10px;
+}
+.filtre #key:focus{
+  background-color: #F7EA63;
 }
 ul > li > ul{
   list-style: none;
@@ -265,6 +312,7 @@ small{
 .inscription_entr input#name{
   top: 5px;
   left: 220px;
+  border-radius: 8px;
 }
 .inscription_entr label[for="name"]{
   top: 5px;
@@ -284,10 +332,12 @@ small{
 .inscription_entr input#email{
   top: 50px;
   left: 220px;
+  border-radius: 8px;
 }
 .inscription_entr input#password{
   top: 95px;
   left: 220px;
+  border-radius: 8px;
 }
 .inscription_entr label[for='name']{
   top: 5px;

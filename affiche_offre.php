@@ -18,6 +18,7 @@
           affiche_annonce($val);
           echo "<li><a href=\"annonce.php?id=".$val['id']."\">Voir plus/Postuler</a></li>";
           echo "</ul>";
+          echo "<hr>";
         }
         $i++;
       }

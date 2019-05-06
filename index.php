@@ -1,7 +1,6 @@
 <?php
   session_start();
   include_once('connex_BD.php');
-  include_once('offres_ville.php');
   include_once('head.php');
   $_SESSION['adresseRetour'] = 'index.php';
  ?>

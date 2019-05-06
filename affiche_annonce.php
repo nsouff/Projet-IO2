@@ -2,7 +2,7 @@
   include_once('connex_BD.php');
   include_once('getLieu.php');
   function affiche_annonce($ligne){
-    echo "<li class=\"announcer\">".$ligne['announcer']."</li>\n";
+    echo "<li class=\"announcer\"><strong>".$ligne['announcer']."</strong></li>\n";
     echo "<li class=\"job\">".$ligne['job']."</li>\n";
     echo "<li class=\"short_description\">".$ligne['short_description']."</li>\n";
     echo "<li class=\"type\">Type: ".$ligne['type']."</li>\n";
