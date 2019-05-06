@@ -25,23 +25,24 @@
     <meta charset="utf-8">
     <title>SITE - emploie</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
   <body>
     <?php
       head();
+      echo "<div class=\"res_search\">\n<h2>Résultat</h2>\n";
       if ($b){
         $i = locate($connex, $où);
         if ($i != -1) $id = getId($connex, $où, $i);
         switch ($i) {
-          case -1: erreur(); break;
-          case 0: offre_search($connex, $key, "", $id, "", "", "", "", 20); break;
-          case 1: offre_search($connex, $key, "", "", $id, "", "", "", 20); break;
-          case 2: offre_search($connex, $key, "", "", "", $id, "", "", 20); break;
+          case -1: echo "<h2>Le lieu que vous cherchez nous est inconnue</h2>"; break;
+          case 0: offre_search($connex, $key, "", $id, "", "", "", "", 1); break;
+          case 1: offre_search($connex, $key, "", "", $id, "", "", "", 1); break;
+          case 2: offre_search($connex, $key, "", "", "", $id, "", "", 1); break;
         }
       }
       else {
-        if (isset($_GET['key'])) $key = $_GET['key'];
+        if (isset($_GET ['key'])) $key = $_GET['key'];
         else $key = null;
         if (isset($_GET['type'])) $type = $_GET['type'];
         else $type = null;
@@ -59,14 +60,17 @@
         else $n = 1;
         offre_search($connex, $key, $type, $regions, $dep, $cit, $début, $fin, $n);
       }
+      echo "</div>";
 
+      echo "<div class=\"filtre\">";
       echo "<h2>Filtre</h2>";
       echo "<form action=\"search.php\" method=\"get\">\n";
-      echo "<input type=\"submit\">";
+      echo "<input type=\"submit\" value=\"Chercher\" class=\"chercher_filtre\">";
       echo "<input type=\"reset\">";
       echo "<label for=\"key\">Job</label><input type=\"text\" id=\"key\" name=\"key\">\n";
       print_filtre($connex);
       echo "</form>";
+      echo "</div>";
      ?>
   </body>
 </html>

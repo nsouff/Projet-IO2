@@ -98,7 +98,6 @@ input.chercher {
   border-radius: 50px;
   background-color: #FFFFFF;
   color: #0a9023;
-  /* float: left; */
 }
 .chercher:hover{
   border: 1px inset;
@@ -162,4 +161,16 @@ input.chercher {
 }
 .login *{
   margin-top: 40px;
+}
+.filtre {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.res_search{
+  float: right;
+  width: 50%;
+}
+.filtre ul{
+  list-style-type: none;
 }
