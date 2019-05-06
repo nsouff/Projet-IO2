@@ -23,12 +23,12 @@
         </div>
         <div class="container">
           <label for="Où"><h2>Où</h2></label>
-          <input class="Où" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
+          <input class="Ou" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
           <input type="hidden" name="pages" value="1">
         </div>
         <div class="container">
           <input class="chercher" type="submit" value="Chercher">
-          
+
         </div>
       </form>
     </div>

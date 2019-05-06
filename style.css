@@ -75,7 +75,7 @@ input[type="submit"]{cursor: pointer;}
   border-radius: 50px;
   border: outset #0a9023 2px;;
 }
-.Où {
+.Ou {
   float: left;
 }
 .search form{
@@ -184,6 +184,9 @@ input.chercher {
 }
 .login *{
   margin-top: 40px;
+}
+.login input[type='password'], .login input[type='email']{
+  border-radius: 10px;
 }
 .filtre {
   width: 50%;

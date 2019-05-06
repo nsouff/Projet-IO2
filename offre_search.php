@@ -24,7 +24,7 @@
 
     $res = mysqli_query($connex, $req);
     if (mysqli_num_rows($res) == 0){
-      echo "<h2>Aucune offre n'a été trouvé</h2>";
+      echo "<h3>Aucune offre n'a été trouvé</h3>";
     }
 
     else {
