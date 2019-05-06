@@ -3,7 +3,7 @@
 //Ici on a deux fonctions permettant de au choix supprimer ou valider une entreprise en fonction de son ID.
 
 function supprEntr($connex,$id) {
-  $req='DELETE from announcer WHERE name=\''.$id.'\'';
+  $req='DELETE FROM announcer WHERE name=\''.$id.'\'';
   mysqli_query($connex,$req);
 
 }
