@@ -1,4 +1,5 @@
 <?php
+//Cette page permet aux user de se connecter à leur compte.
 session_start();
 include_once('getResp.php');
 include_once('head.php');
@@ -54,7 +55,7 @@ if($b) {
         <label for="e">Adresse mail:</label>
         <input type="email" name="mail" id="e">
         <br>
-        <label for"a">Mot de passe:</label>
+        <label for="a">Mot de passe:</label>
         <input type="password" name="mdp" id="a">
         <br>
         <input type="submit" value="Valider">

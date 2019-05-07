@@ -3,7 +3,9 @@ include_once('connex_BD.php');
 
 //Cette fonction permet d'afficher toutes les annonces non validées
 //par l'administration, sous la forme d'un tableau, avec un formulaire POST
-//permettant de cocher la validation ou la suppression pour chaque annonce.
+//permettant de cocher la validation ou la suppression pour chaque annonce et
+//les informations relatives à l'annonce.
+//Cette fonction est utilisée sur la page ApprobationAnnonces.php
 function afficheNonValidé($connex) {
   $req='SELECT * FROM announce WHERE valid=0';
   $resultat=mysqli_query($connex,$req);

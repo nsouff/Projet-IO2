@@ -1,4 +1,5 @@
 <?php
+//Ici un compte entreprise peut modifier son mot de passe ou accéder à la suppression de son compte.
 session_start();
 include_once('connex_BD.php');
 include_once('head.php');

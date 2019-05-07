@@ -1,4 +1,6 @@
 <?php
+//Sur cette page les entreprises visionnent leurs annonces et les utilisateurs qui y ont postulé
+//Elles ont accès à leur CV et lettre de motivation.
   session_start();
   include_once('connex_BD.php');
   include_once('getAnnounce.php');

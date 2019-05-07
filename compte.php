@@ -1,4 +1,5 @@
 <?php
+//Ici un compte utilisateur peut modifier numéro de téléphone et mot de passe ainsi que supprimer son compte.
 session_start();
 include_once('connex_BD.php');
 include_once('head.php');

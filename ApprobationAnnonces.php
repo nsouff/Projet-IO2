@@ -1,4 +1,5 @@
 <?php
+//Sur cette page administrateurs et root peuvent valider ou supprimer les annonces non validées.
 session_start();
 include_once('connex_BD.php');
 include_once('affiche_annonce_à_valider.php');

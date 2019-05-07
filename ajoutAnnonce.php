@@ -1,4 +1,5 @@
 <?php
+//Cette page sert pour une entreprise validée afin d'ajouter une annonce.
 session_start();
 include_once('deroul.php');
 include_once('connex_BD.php');
@@ -12,6 +13,7 @@ $a=(getResp() == 4);
 if($a) { $announcer=$_SESSION['announcer_name']; }
 $b=(isset($_POST['short']) && isset($_POST['long']) && isset($_POST['type']) && isset($_POST['start']) && isset($_POST['regions']) && isset($_POST['departements']) && isset($_POST['cities']) && isset($_POST['end']) && isset($_POST['job']));
 if($b) {
+  //On utilise mysqli_real_escape_string() pour éviter les injections SQL.
   $announcer = mysqli_real_escape_string($connex, $_SESSION['announcer_name']);
   $sh = mysqli_real_escape_string($connex, $_POST['short']);
   $lg = mysqli_real_escape_string($connex, $_POST['long']);
@@ -22,6 +24,7 @@ if($b) {
   $dep = mysqli_real_escape_string($connex, $_POST['departements']);
   $cit = mysqli_real_escape_string($connex, $_POST['cities']);
   $job = mysqli_real_escape_string($connex, $_POST['job']);
+  //On vérifie la cohérence de l'annonce.
   $verif = verifCohérenceAnnonce($connex, $reg, $dep, $cit);
 }
  ?>
@@ -37,7 +40,9 @@ if($b) {
      <?php head(); ?>
      <?php if ($a && $_SESSION['valid']): ?>
        <?php
-       if ($b && $verif) save2($connex,$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit);
+       if ($b && $verif)
+       //Si l'annonce est correctement set et cohérente alors on l'ajoute
+        save2($connex,$announcer,$lg,$sh,$type,$start,$end,$job,$reg,$dep,$cit);
        else if ($b) echo "<h3 class=\"center\">Erreur, il y a une incohérence dans le lieu que vous avez choisi</h3>";
        ?>
         <form class="ajoutAnnonce" action="ajoutAnnonce.php" method="post">
@@ -78,6 +83,7 @@ if($b) {
         <h3 class="center">Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus bref délais</h3>
      <?php endif; ?>
      <?php if(!$a) {
+       //Si la session n'est pas celle d'une entreprise on affiche ce message d'erreur.
        echo "<h1 class=\"center\">Erreur critique</h1>";
        echo "<h3 class=\"center\">Vous n'êtes pas connectés à votre compte entreprise et ne pouvez pas ajouter une annonce. <br>";
        echo "<a href=connexionEntreprise.php>Connectez vous ici</a></h3>";

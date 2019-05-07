@@ -1,4 +1,5 @@
 <?php
+//Sur cette page on peut cliquer sur un lien pour supprimer son compte utilisateur.
 session_start();
 include_once('head.php');
 include_once('connex_BD.php');

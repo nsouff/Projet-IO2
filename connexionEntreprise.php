@@ -1,4 +1,5 @@
 <?php
+//Ici une entreprise peut se connecter à son compte en rentrant mail et mot de passe.
 session_start();
 include_once('connex_BD.php');
 include_once('getResp.php');
@@ -40,7 +41,7 @@ if($b) {
       <label for="e">Adresse mail:</label>
       <input type="email" name="mail" id="e">
       <br>
-      <label for"a">Mot de passe:</label>
+      <label for="a">Mot de passe:</label>
       <input type="password" name="mdp" id="a">
       <br>
       <input type="submit" value="Valider">

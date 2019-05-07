@@ -9,7 +9,7 @@
       echo "<nav class=\"non_logged\">";
       echo "<a href=\"inscription.php\">Inscription</a>";
       echo "<a href=\"page_login.php\">Connexion</a>";
-      echo "<a href=\"inscription_entr.php\">Entrprise? Inscrivez-vous</a>";
+      echo "<a href=\"inscription_entr.php\">Entreprise? Inscrivez-vous</a>";
       echo "<a href=\"connexionEntreprise.php\">Connexion entreprise</a>";
       echo "</nav>";
     }
@@ -21,7 +21,7 @@
     if ($resp != 0) echo "</nav>";
     echo "<nav class=\"option\">";
     if ($resp == 1) {
-      echo "<a href=\"search.php\">Trouver un emploie</a>";
+      echo "<a href=\"search.php\">Trouver un emploi</a>";
     }
     if ($resp == 2 || $resp == 3){
       echo "<a href=\"ApprobationAnnonces.php\">Valider des annonces</a>";

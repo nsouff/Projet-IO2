@@ -1,5 +1,7 @@
 <?php
-
+//Cette fonctoin récupère toutes les entreprises non validées et affiche leurs informations
+//sous forme de ligne de tableau, avec deux boutons qui servent à choisir si on supprime ou
+//valide l'entreprise.
 
 function EntrepriseNonValidé($connex) {
   $req='SELECT * FROM announcer WHERE valid=0';

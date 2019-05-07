@@ -1,4 +1,5 @@
 <?php
+//Sur cette page administrateurs et root peuvent valider ou supprimer les comptes entreprises.
 session_start();
 include_once('connex_BD.php');
 include_once('affiche_entreprise_à_valider.php');
@@ -6,12 +7,14 @@ include_once('gestionEntreprises.php');
 include_once('head.php');
 include_once('getResp.php');
 $resp = getResp();
+//Si la session n'est ni admin ni root elle retourne à l'adresse précédente.
 if ($resp != 2 && $resp != 3){
   if (isset($_SESSION['adresseRetour'])) $header = 'Location: '.$_SESSION['adresseRetour'];
   else $header = 'Location: index.php';
   header($header);
 }
 $connex=connex_BD();
+//Pour tous les élements du tableau, si la valeur est suppr on supprime, si la valeur est val on valide.
 foreach($_POST as $key => $val) {
   if($val=="suppr") {
     supprEntr($connex,$key);
@@ -22,7 +25,6 @@ foreach($_POST as $key => $val) {
 }
 
  ?>
-
 
  <!DOCTYPE html>
  <html lang="fr" dir="ltr">

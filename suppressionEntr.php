@@ -1,4 +1,5 @@
 <?php
+//Sur cette page il y a un unique lien permettant de supprimer son compte entreprise.
 session_start();
 include_once('head.php');
 include_once('connex_BD.php');

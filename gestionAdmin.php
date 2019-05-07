@@ -1,7 +1,8 @@
 <?php
 
 
-
+//Ces fonctions ont pour fonction respective de retrograder un admin en settant son
+//level à 1 ou à promouvoir un utilisateur en settant son level à 2.
 
 function RetrograderAdmin($connex,$id) {
   $req='UPDATE user SET level=1 WHERE id='.$id;

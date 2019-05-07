@@ -27,16 +27,16 @@
 -- Création d'entreprise non valide (elles ne pourront, tant qu'elle ne sont pas valide poster d'annonces)
   INSERT INTO announcer (name, email, password, valid)
       VALUES
-            ('nonValide1', 'a@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide2', 'b@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide3', 'c@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide4', 'd@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide5', 'e@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide6', 'f@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide7', 'g@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide8', 'h@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide9', 'i@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
-            ('nonValide10', 'j@hotmail.com', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0); -- mdp = 's'
+            ('nonValide1', 'a@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide2', 'b@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide3', 'c@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide4', 'd@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide5', 'e@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide6', 'f@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide7', 'g@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide8', 'h@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide9', 'i@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0), -- mdp = 's'
+            ('nonValide10', 'j@hotmail.fr', '$2y$10$RxmYqaf2bi0iaVvIaNyMfuO.8CkM1QqFOARktgo6fakiV3m1Vxmf6', 0); -- mdp = 's'
 
 -- Création des annonces en CDI sans date de départ
   INSERT INTO announce (announcer, short_description, long_description, type, job, region_id, departement_id, city_id, valid)

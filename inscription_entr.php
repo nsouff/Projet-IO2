@@ -30,10 +30,10 @@
         <form action="inscription_entr.php" method="post">
           <label for="name">Nom de l'entreprise: </label>
           <input type="text" name="name" id="name" pattern="[^_]*">
-          <small>Le charchatère '_' est intérdit</small>
+          <small>Le caractère '_' est intérdit</small>
           <br>
           <label for="email">Email: </label>
-          <input type="email" name="email"id="email">
+          <input type="email" name="email" id="email">
           <br>
           <label for="password">Mot de passe: </label>
           <input type="password" name="password"  id="password">

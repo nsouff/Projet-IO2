@@ -2616,4 +2616,4 @@ INSERT INTO  cities (name, departement_id)
               ('Zillisheim', '68');
 
 INSERT INTO user (first_name, last_name, email, phone_number, password, level)
-  VALUES  ('root', 'root', 'root@gmail.com', '0601020304', '$2y$10$weq/cOMwvP1VadXfLMHZWe.c4BusBbYhrRQ2AICxWVMJmxhFret/m', 3); -- mdp = 'root_IO2_emploie'
+  VALUES  ('root', 'root', 'root@gmail.com', '0601020304', '$2y$10$hAIBFbM6ftYFEVv1DTCx9OfOxBQw//8x5D1RyWcLXVuZSo0hM0.oK', 3); -- mdp = 'root_IO2_emploi'

@@ -1,4 +1,5 @@
 <?php
+//Ici le root peut promouvoir des utilisateurs an rang d'admin ou à l'inverse rétrograder des admins.
 session_start();
 include_once('head.php');
 include_once('connex_BD.php');
