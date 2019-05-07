@@ -47,7 +47,7 @@ if($b) {
         <label for='num'>Nouveau numéro de téléphone</label>
         <input class="compte_text_input" type='text' name='numero' pattern="0[0-9]{9}" id="num" value=<?php echo "".$ancien; ?>>
         <br>
-        <input type='submit'>
+        <input type='submit' value="Modifier">
       </form>
       <a href="suppressionUser.php">Cliquez ici pour supprimer votre compte </a><br>
       <p><strong>ATTENTION! cette suppression est irrévocable</strong></p>

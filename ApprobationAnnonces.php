@@ -38,7 +38,7 @@ foreach($_POST as $key => $val) {
 
         <form action=ApprobationAnnonces.php method=post>
           <input type="submit" value="Envoyer" class="input_validation">
-          <input type="reset" class="input_validation">
+          <input type="reset" class="input_validation" value="Réinitialiser">
           <table class="tftable">
             <tr><th>Employeur</th><th>Courte description</th><th>Type de contrat</th><th>Début du contrat</th><th>Fin du  contrat</th><th>Intitulé du job</th><th>Annonce  détaillée</th><th>Valider</th><th>Supprimer</th></tr>
             <?php afficheNonValidé(connex_BD()); ?>

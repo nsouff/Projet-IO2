@@ -66,7 +66,7 @@
       echo "<h2>Filtre</h2>";
       echo "<form action=\"search.php\" method=\"get\">\n";
       echo "<input type=\"submit\" value=\"Chercher\" class=\"chercher_filtre\">";
-      echo "<input type=\"reset\"><br>";
+      echo "<input type=\"reset\" value=\"Réinitialiser\"><br>";
       echo "<label for=\"key\"><strong>Job: </strong></label><input type=\"text\" id=\"key\" name=\"key\">\n";
       print_filtre($connex);
       echo "</form>";

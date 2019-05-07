@@ -36,7 +36,7 @@ if($b) {
         <label for=mdp>Nouveau mot de passe:</label>
         <input class="compte_text_input" type='password' name='mdp' id="mdp">
         <br>
-        <input type='submit' value="Valider">
+        <input type='submit' value="Modifier">
       </form>
       <a href=suppressionEntr.php>Cliquez ici pour supprimer votre  compte entreprise</a><br>
       <p><strong>ATTENTION! Cette suppression est irrévocable</strong></p>

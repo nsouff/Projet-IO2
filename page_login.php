@@ -50,14 +50,14 @@ if($b) {
       if (!$a && $b) echo "<h4>Identifiants incorrect</h4>";
       if (!$b || !$a) {
         echo '<h1> Connectez vous à votre compte Chercheur d\'emploi </h1>
-        <form action=page_login.php method=POST>
+        <form action="page_login.php" method="post">
         <label for="e">Adresse mail:</label>
-        <input type=email name=mail id=e>
+        <input type="email" name="mail" id="e">
         <br>
         <label for"a">Mot de passe:</label>
-        <input type=password name=mdp id=a>
+        <input type="password" name="mdp" id="a">
         <br>
-        <input type=submit>
+        <input type="submit" value="Valider">
         </form>
         <p>Pas encore inscrit? <a href="inscription.php">Inscrivez vous</a></p>'; }
       if (!$a) {

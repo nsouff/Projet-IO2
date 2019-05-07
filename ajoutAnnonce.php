@@ -69,7 +69,7 @@ if($b) {
             deroul($connex, "cities");
             echo "<br>";
             ?>
-          <input type="submit" value="Ajouter" class="bouton_ajout_annonce"><input type="reset" class="bouton_ajout_annonce">
+          <input type="submit" value="Ajouter" class="bouton_ajout_annonce"><input type="reset" value="Réinitialiser" class="bouton_ajout_annonce">
        </form>
        <?php
      endif;

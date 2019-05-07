@@ -41,7 +41,7 @@
           <input type="password" name="password" id="password" required><br>
           <label for="age">Vous confirmez avoir plus de 18ans</label>
           <input type="radio" id="age" required><br>
-          <input type="submit">
+          <input type="submit" value="Valider">
           </form>
         </div>
       <?php endif; ?>

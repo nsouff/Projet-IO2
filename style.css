@@ -452,3 +452,19 @@ th, td{
   border-radius: 10px;
 
 }
+.suppression{
+  width: 780px;
+  margin: auto;
+  text-align: center;
+  margin-top: 150px;
+  border: dashed red 3px;
+  background-color: #FFFFFF;
+  padding: 50px;
+  border-radius: 5px;
+}
+.suppression a{
+  color: red;
+  font-weight: bolder;
+  font-size: 1.3em;
+  text-decoration: none;
+}

@@ -36,14 +36,14 @@ if($b) {
     if (!$a) {
       if($b) echo "<h4>vos identifiants sont faux</h4>";
     echo '<h1> Connectez vous à votre compte Entreprise </h1>
-    <form action=connexionEntreprise.php method=POST>
+    <form action="connexionEntreprise.php" method="post">
       <label for="e">Adresse mail:</label>
-      <input type=email name=mail id=e>
+      <input type="email" name="mail" id="e">
       <br>
       <label for"a">Mot de passe:</label>
-      <input type=password name=mdp id=a>
+      <input type="password" name="mdp" id="a">
       <br>
-      <input type=submit>
+      <input type="submit" value="Valider">
     </form>';
     echo "<p>Pas encore inscrit? <a href=\"inscription_entr.php\">Inscrivez vous</a></p>";}
       ?>

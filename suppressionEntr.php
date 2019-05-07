@@ -22,11 +22,14 @@ if($b) {
      <meta charset="utf-8">
      <title>Supprimer votre compte</title>
      <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
    </head>
    <body>
      <?php head(); ?>
-     <h1>Voulez vous vraiment supprimer votre compte entreprise</h1>
-     <h3>Il n'y aura pas de retour en arrière possible</h3>
-     <a href=suppressionEntr.php?suppr=oui>Cliquez ici pour supprimer définitivement votre compte</a>
+     <div class="suppression">
+       <h1>Voulez vous vraiment supprimer votre compte entreprise</h1>
+       <h3>Il n'y aura pas de retour en arrière possible</h3>
+       <a href="suppressionEntr.php?suppr=oui">Cliquez ici pour supprimer définitivement votre compte</a>
+     </div>
    </body>
  </html>

@@ -39,7 +39,7 @@ if($b) {
      <a href="#" class="go_top">^</a>
      <div class="espace_admin">
        <form action=EspaceRoot.php method=post>
-         <input type="submit" class="input_validation"><input type="reset" class="input_validation">
+         <input type="submit" class="input_validation" value="Valider"><input type="reset" class="input_validation" value="Réinitialiser">
          <table class="tftable">
            <tr><th>Prénom</th><th>Nom de famille</th><th>Email</th><th>Rétrograder</th></tr>
            <?php afficheAdmin($connex); ?>
