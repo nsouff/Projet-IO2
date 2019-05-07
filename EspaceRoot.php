@@ -17,7 +17,7 @@ foreach($_POST as $key => $val) {
 $b=isset($_POST['prom']);
 
 if($b) {
-  $prom=$_POST['prom'];
+  $prom=mysqli_real_escape_string($connex, $_POST['prom']);
   $c=isUser($connex,$prom);
   if($c) PromouvoirAdmin($connex,$prom);
 }

@@ -23,7 +23,8 @@ if($b) {
   $numero=mysqli_real_escape_string($connex,$_POST['numero']);
   modifCompte($connex,$mdp,$numero,$id);
   $_SESSION['numero']=$numero;
-  header('Location: '.$adresseRetour);
+  if (isset($_SESSION['adresseRetour'] header('Location: '.$adresseRetour);
+  else header('Location: index.php');
 } ?>
 
 <!DOCTYPE html>

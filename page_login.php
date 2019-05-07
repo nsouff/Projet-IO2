@@ -7,7 +7,7 @@ include_once('login.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
 if($b) {
-  $a=verifLogin($_POST['mail'],$_POST['mdp'],"user");
+  $a=verifLogin(mysqli_real_escape_string($connex, $_POST['mail']),$_POST['mdp'],"user");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
     $infos=récupUser($_POST['mail']);

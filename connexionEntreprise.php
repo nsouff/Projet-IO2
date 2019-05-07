@@ -9,7 +9,7 @@ $connex=connex_BD();
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;
 if($b) {
-  $a=verifLogin($_POST['mail'],$_POST['mdp'],"announcer");
+  $a=verifLogin(mysqli_real_escape_string($connex, $_POST['mail']),$_POST['mdp'],"announcer");
   if($a) {
     $_SESSION['mail']=$_POST['mail'];
     if (!isset($_SESSION['adresseRetour'])) $_SESSION['adresseRetour']='index.php';
