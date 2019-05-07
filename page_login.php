@@ -2,7 +2,9 @@
 session_start();
 include_once('getResp.php');
 include_once('head.php');
+include_once('connex_BD.php');
 $resp = getResp();
+$connex = connex_BD();
 include_once('login.php');
 $b= (isset($_POST['mail']) && isset($_POST['mdp']));
 $a=false;

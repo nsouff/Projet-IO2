@@ -4,7 +4,6 @@
   include_once('offre_search.php');
   include_once('locate.php');
   include_once('filtre.php');
-  include_once('erreur.php');
   include_once('getId.php');
   include_once('getResp.php');
   include_once('head.php');

@@ -214,8 +214,9 @@ input.chercher {
   float: right;
   width: 50%;
 }
+ul{list-style: none;}
 .res_search ul{
-  list-style: none;
+  /* list-style: none; */
 }
 .res_search hr{
   border: 0px;
@@ -252,7 +253,7 @@ input.chercher {
   background-color: #F7EA63;
 }
 ul > li > ul{
-  list-style: none;
+  /* list-style: none; */
   background-image: radial-gradient(circle, #8fc4d8, white);
 }
 .espace_entreprise > div{
