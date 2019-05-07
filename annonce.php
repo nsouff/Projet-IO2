@@ -33,21 +33,24 @@
    </head>
    <body>
      <?php head(); ?>
-     <?php if ($b) postule($connex); ?>
-     <?php aff_annonce_detail($connex, $announce_id); ?>
-     <?php if ($b) echo "enregistré!"; ?>
-     <?php if ($resp == 1 && can_postule($connex, $user_id, $announce_id)): ?>
-       <form action=<?php echo "annonce.php?id=$announce_id"; ?> method="post" enctype="multipart/form-data">
-         <label for="CV">CV: </label>
-         <input type="file" name="CV" id="CV" required>
-         <label for="Motiv">Lettre de motivation: </label>
-         <input type="file" name="Motiv" id="Motiv">
-         <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-         <input type="hidden" name="announce_id" value="<?php echo $announce_id; ?>">
-         <input type="submit">
-       </form>
-     <?php elseif ($resp == 1 && !$b): echo "Vous avez déjà postuler"; ?>
-     <?php elseif ($resp != 1): echo "Connectez vous ou inscrivez vous pour postuler"; ?>
-     <?php endif; ?>
+     <div class="page_annonce">
+
+      <?php if ($b) postule($connex); ?>
+      <?php aff_annonce_detail($connex, $announce_id); ?>
+      <?php if ($b) echo "<p class=\"secondaire\">enregistré!</p>"; ?>
+      <?php if ($resp == 1 && can_postule($connex, $user_id, $announce_id)): ?>
+        <form action=<?php echo "\"annonce.php?id=$announce_id\""; ?> method="post" enctype="multipart/form-data">
+          <label for="CV">CV: </label>
+          <input type="file" name="CV" id="CV" required>
+          <label for="Motiv">Lettre de motivation: </label>
+          <input type="file" name="Motiv" id="Motiv">
+          <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+          <input type="hidden" name="announce_id" value="<?php echo $announce_id; ?>">
+          <input type="submit" value="Postuler">
+        </form>
+      <?php elseif ($resp == 1 && !$b): echo "<p class=\"important\">Vous avez déjà postuler</p>"; ?>
+      <?php elseif ($resp != 1): echo "<p class=\"important\">Connectez vous ou inscrivez vous pour postuler</p>"; ?>
+      <?php endif; ?>
+    </div>
    </body>
  </html>

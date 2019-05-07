@@ -8,10 +8,11 @@
     else {
       $an = mysqli_fetch_assoc($res);
       echo "<ul>\n";
-      echo "<li>".$an['announcer']."</li>\n";
-      echo "<li>".$an['type']."</li>\n";
-      echo "<li>".getLieu($connex, $an['city_id'], $an['departement_id'])."</li>\n";
-      echo "<li>".$an['short_description']."</li>\n";
+      echo "<li class=\"important\">".$an['announcer']."</li>\n";
+      echo "<li class=\"important\">".$an['job']."</li>\n";
+      echo "<li class=\"secondaire\">".$an['type']."</li>\n";
+      echo "<li class=\"secondaire\">".getLieu($connex, $an['city_id'], $an['departement_id'])."</li>\n";
+      echo "<li class=\"secondaire\">".$an['short_description']."</li>\n";
       echo "<li>".$an['long_description']."</li>\n";
       if ($an['type'] == "CDD"){
         echo "<li>".$an['start_date']."</li>\n";

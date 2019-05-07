@@ -31,9 +31,9 @@ foreach($_POST as $key => $val) {
      <title>Approuver les annonces en attente</title>
    </head>
    <body>
-     <a href="#" class="go_top">^</a>
+     <?php if (!$b) echo "<a href=\"#\" class=\"go_top\">^</a>"?>
      <?php head(); ?>
-     <div class="espace_admin">
+     <div class=<?php if (!$b) echo "\"espace_admin\""; else echo "\"page_annonce\"" ?>>
      <?php if (!$b): ?>
 
         <form action=ApprobationAnnonces.php method=post>
