@@ -32,19 +32,24 @@ if($b) {
     <meta charset="utf-8">
     <title>Modifiez votre compte</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
   <body>
     <?php head(); ?>
-    <h3>Ici vous pouvez modifier votre numéro de téléphone et votre mot de passe</h3>
-    <form action='compte.php' method=post>
-      <label for=mdp>Nouveau mot de passe:</label>
-      <input type='password' name='mdp'>
-      <br>
-      <label for='num'>Nouveau numéro de téléphone</label>
-      <input type='text' name='numero' value=<?php echo "".$ancien; ?>>
-      <input type='submit'>
-    </form>
-    <br><br><br>
-    <a href="suppressionUser.php">Cliquez ici pour supprimer votre compte </a>
+    <div class="modifCompte">
+
+      <h3>Ici vous pouvez modifier votre numéro de téléphone et votre mot de passe</h3>
+      <form action='compte.php' method=post>
+        <label for="mdp">Nouveau mot de passe:</label>
+        <input type='password' name='mdp' id="mdp" class="compte_text_input">
+        <br>
+        <label for='num'>Nouveau numéro de téléphone</label>
+        <input class="compte_text_input" type='text' name='numero' pattern="0[0-9]{9}" id="num" value=<?php echo "".$ancien; ?>>
+        <br>
+        <input type='submit'>
+      </form>
+      <a href="suppressionUser.php">Cliquez ici pour supprimer votre compte </a><br>
+      <p><strong>ATTENTION! cette suppression est irrévocable</strong></p>
+    </div>
   </body>
 </html>
