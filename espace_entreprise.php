@@ -21,7 +21,7 @@
     <?php
       if (getResp() != 4) echo "<h1>Vous n'êtes pas connecté</h1><a href=\"connexionEntreprise.php\">Connectez vous</a>";
       else {
-        echo "<div class=\"esapce_entreprise\">";
+        echo "<div class=\"espace_entreprise\">";
         $res = getAnnounce($connex, $_SESSION['announcer_name']);
         while ($ligne = mysqli_fetch_assoc($res)){
           echo "<div class=\"annonce_postulant\"><strong>Pour l'annonce:</strong> \n";

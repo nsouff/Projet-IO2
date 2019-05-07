@@ -10,7 +10,6 @@ function afficheNonValidé($connex) {
   if(!$resultat) exit();
   else {
     while($ligne=mysqli_fetch_assoc($resultat)) {
-      if($ligne['type']=="CDI") { $ligne['end_date']="/"; }
       echo "<tr><td>".$ligne['announcer']."</td><td>".$ligne['short_description']."</td><td>".$ligne['type']."</td><td>".$ligne['start_date']."</td><td>".$ligne['end_date']."</td><td>".$ligne['job']."</td><td><a href=\"ApprobationAnnonces.php?id=".$ligne['id']."\">Voir l'annonce</a></td><td><input type=\"radio\" name=\"".$ligne['id']."\" value=\"valid\"></td><td><input type=\"radio\" name=\"".$ligne['id']."\" value=\"suppr\"></td></tr>";
     }
   }

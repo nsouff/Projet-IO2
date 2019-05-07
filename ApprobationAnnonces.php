@@ -27,26 +27,29 @@ foreach($_POST as $key => $val) {
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
      <title>Approuver les annonces en attente</title>
    </head>
    <body>
+     <a href="#" class="go_top">^</a>
      <?php head(); ?>
+     <div class="espace_admin">
      <?php if (!$b): ?>
-       <form action=ApprobationAnnonces.php method=post>
-       <table class="tftable" border="1">
-         <tr><th>Employeur</th><th>Courte description</th><th>Type de contrat</th><th>Début du contrat</th><th>Fin du contrat</th><th>Intitulé du job</th><th>Annonce détaillée</th><th>Valider</th><th>Supprimer</th></tr>
-         <?php afficheNonValidé(connex_BD()); ?>
-       </table>
+
+        <form action=ApprobationAnnonces.php method=post>
+          <input type="submit" value="Envoyer" class="input_validation">
+          <input type="reset" class="input_validation">
+          <table class="tftable">
+            <tr><th>Employeur</th><th>Courte description</th><th>Type de contrat</th><th>Début du contrat</th><th>Fin du  contrat</th><th>Intitulé du job</th><th>Annonce  détaillée</th><th>Valider</th><th>Supprimer</th></tr>
+            <?php afficheNonValidé(connex_BD()); ?>
+          </table>
+        </form>
 
 
      <?php endif; ?>
-     <?php if ($b): ?>
        <?php if($b) {
        aff_annonce_detail(connex_BD(),$_GET['id']);
      } ?>
-       <?php endif; ?>
-       <input type="submit" name="Envoyer">
-     </form>
+      </div>
    </body>
  </html>

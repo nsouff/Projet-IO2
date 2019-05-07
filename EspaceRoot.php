@@ -32,19 +32,22 @@ if($b) {
      <meta charset="utf-8">
      <title>Espace Root</title>
      <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
    </head>
    <body>
      <?php head(); ?>
-     <form action=EspaceRoot.php method=post>
-     <table class="tftable" border="1">
-       <tr><th>Prénom</th><th>Nom de famille</th><th>Email</th><th>Rétrograder</th></tr>
-       <?php afficheAdmin($connex); ?>
-     </table>
-       <br>
-       <label for="prom">Rentrez ici le mail de l'utilisateur que vous voulez promouvoir administrateur:</label>
-       <input type="text" name="prom" id="prom">
-       <input type="submit"><input type="reset">
-     </form>
+     <a href="#" class="go_top">^</a>
+     <div class="espace_admin">
+       <form action=EspaceRoot.php method=post>
+         <input type="submit" class="input_validation"><input type="reset" class="input_validation">
+         <table class="tftable">
+           <tr><th>Prénom</th><th>Nom de famille</th><th>Email</th><th>Rétrograder</th></tr>
+           <?php afficheAdmin($connex); ?>
+         </table>
+         <br>
+         <label for="prom">Rentrez ici le mail de l'utilisateur que vous voulez promouvoir administrateur:</label>
+         <input type="text" name="prom" id="prom"><br>
+       </form>
+     </div>
    </body>
  </html>

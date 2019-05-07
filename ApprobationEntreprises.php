@@ -34,13 +34,17 @@ foreach($_POST as $key => $val) {
    </head>
    <body>
      <?php head(); ?>
-       <form action=ApprobationEntreprises.php method=post>
-       <table class="tftable" border="1">
-         <tr><th>Nom de l'Entreprise</th><th>Email</th><th>Valider</th><th>Supprimer</th></tr>
-         <?php EntrepriseNonValidé(connex_BD()); ?>
-       </table>
-     <input type="submit" value="Envoyer">
-     <input type="reset">
-     </form>
+     <a href="#" class="go_top">^</a>
+     <div class="espace_admin">
+       <input type="submit" value="Envoyer" class="input_validation">
+       <input type="reset" class="input_validation">
+        <form action=ApprobationEntreprises.php method=post>
+          <table class="tftable">
+            <tr><th>Nom de l'Entreprise</th><th>Email</th><th>Valider</ th><th>Supprimer</th></tr>
+            <?php EntrepriseNonValidé(connex_BD()); ?>
+          </table>
+        </form>
+      </div>
+
    </body>
  </html>
