@@ -40,7 +40,7 @@ foreach($_POST as $key => $val) {
        <input type="reset" class="input_validation">
         <form action=ApprobationEntreprises.php method=post>
           <table class="tftable">
-            <tr><th>Nom de l'Entreprise</th><th>Email</th><th>Valider</ th><th>Supprimer</th></tr>
+            <tr><th>Nom de l'Entreprise</th><th>Email</th><th>Valider</th><th>Supprimer</th></tr>
             <?php EntrepriseNonValidé(connex_BD()); ?>
           </table>
         </form>

@@ -29,7 +29,7 @@
      <meta charset="utf-8">
      <link rel="stylesheet" href="style.css">
      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-     <title>SITE - annonce</title>
+     <title>Annonce</title>
    </head>
    <body>
      <?php head(); ?>

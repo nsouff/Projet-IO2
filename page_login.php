@@ -32,7 +32,7 @@ if($b) {
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Page de Login</title>
+    <title>Connexion</title>
   </head>
   <body>
     <?php

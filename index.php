@@ -10,18 +10,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>NOM DU SITE</title>
+    <title>YES</title>
   </head>
   <body>
     <?php head(); ?>
       <div class="search">
       <form action="search.php" method="get">
         <div class="container">
-          <label for="key"><h2>Job</h2></label>
+          <h2><label for="key">Job</label></h2>
           <input class="" type="text" name="key" placeholder="Mot clé" id="key">
         </div>
         <div class="container">
-          <label for="Où"><h2>Où</h2></label>
+          <h2><label for="Où">Où</label></h2>
           <input class="Ou" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
           <input type="hidden" name="pages" value="1">
         </div>
