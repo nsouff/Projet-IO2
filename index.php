@@ -22,7 +22,7 @@
         </div>
         <div class="container">
           <h2><label for="Où">Où</label></h2>
-          <input class="Ou" type="text" name="Où" placeholder="Ville, département, régions" id="Où">
+          <input class="Ou" type="text" name="Où" placeholder="Ville, département, région" id="Où">
           <input type="hidden" name="pages" value="1">
         </div>
         <div class="container">

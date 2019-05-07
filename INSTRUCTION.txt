@@ -1,11 +1,11 @@
-Pour faire marcher le site: Créer une base de donnée du nom de Site, puis créer créer un utilisateur s'appelant site avec le mot de passe 'IO2_site' en lui accordant les droits sur cette base de donnée (si vous voulez utiliser d'autre nom changez les paramètre de la fonction dans connex_BD.php)
-En étant dans la base de donnée Site, utilisez la commande source de mysql avec le fichier 'create_DB.sql', vous avez désormais la base de donnée du site.
+Pour faire marcher le site: Créer une base de données du nom de Site, puis créer un utilisateur s'appelant site avec le mot de passe 'IO2_site' en lui accordant les droits sur cette base de données (si vous voulez utiliser d'autre nom changez les paramètres de la fonction dans connex_BD.php)
+En étant dans la base de données Site, utilisez la commande source de mysql avec le fichier 'create_DB.sql', vous avez désormais la base de données du site.
 Le root sera déjà inscrit.
 
-Le zip contiendra deux dossier, CV et Motiv, ceux ci seront vide, si les droits ne sont pas à 733 veuillez s'il vous plait à faire un chmod 733 sur ces deux dossier
+Le projet contient également deux dossiers CV et Motiv, ceux ci seront vides, si les droits ne sont pas à 733 veuillez s'il vous plaît à faire un chmod 733 sur ces deux dossiers.
 
 Si vous voulez ajouter des exemples au site utilisez le fichier 'create_example.sql', en l'utilisant comme source, vous aurez un certain nombre d'utilisateur et d'entreprise, vous pouvez allez voir leur mot de passe et email dans le fichier.
-Voilà quelque exemple d'utilisateur avec en premier leur adresse mail et en deuxième leur mot de passe:
+Voilà quelques exemples d'utilisateurs avec en premier leur adresse mail et en deuxième leur mot de passe:
 
 - le root: 'root@gmail.com', 'root_IO2_emploi'
 - un administrateur: 'admin1@gmail.com', 'admin_mdp_1'
@@ -13,7 +13,7 @@ Voilà quelque exemple d'utilisateur avec en premier leur adresse mail et en deu
 - une entreprise validé: 'a@gmail.com', 's'
 - une entreprise non validé: 'a@hotmail.fr', 's'
 
-A noter que le mot de passe de toutes les entreprises que nous avons créer pour l'exemple est 's' et que celui de tout les utilisateurs (autre que root/administrateur) est 'exemple'
+A noter que le mot de passe de toutes les entreprises que nous avons crée pour l'exemple est 's' et que celui de tous les utilisateurs (autre que root/administrateur) est 'exemple'
 
-Il n'y a aucun exemple d'utilisateur qui à postuler à une annonce, cependant nous invitons à le faire et à voir le résultat (seul les fichiers .docx, .doc et .pdf sont acceptés).
+Il n'y a aucun exemple d'utilisateur qui a postulé à une annonce, cependant nous invitons à le faire et à voir le résultat (seul les fichiers .docx, .doc et .pdf sont acceptés).
 De plus une fois avoir postulé nous vous invitons à regarder le résultats du côté de l'entreprise pour pouvoir lire le CV et potentiellement la lettre de motivation.

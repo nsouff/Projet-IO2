@@ -80,7 +80,7 @@ if($b) {
      endif;
      if ($a && !$_SESSION['valid']):
        ?>
-        <h3 class="center">Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus bref délais</h3>
+        <h3 class="center">Votre compte n'a pas encore été validé par un administrateur du site, nous nous excusons pour la gène. Cela dervrait être fait dans les plus brefs délais</h3>
      <?php endif; ?>
      <?php if(!$a) {
        //Si la session n'est pas celle d'une entreprise on affiche ce message d'erreur.
