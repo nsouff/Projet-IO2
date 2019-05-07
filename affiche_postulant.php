@@ -5,7 +5,7 @@
   function affiche_postulant($connex, $an_id){
     $req = "SELECT * FROM link WHERE announce_id=$an_id;";
     $res = mysqli_query($connex, $req);
-    if (mysqli_num_rows($res) == 0) echo "<li><strong>Personne n'a postuler</strong></li>";
+    if (mysqli_num_rows($res) == 0) echo "<li><strong>Personne n'a postulé</strong></li>";
     else{
       while ($link = mysqli_fetch_assoc($res)){
         affiche_user($connex, get_user($connex, $link['user_id']), $link);

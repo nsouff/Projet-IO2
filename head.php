@@ -26,11 +26,11 @@
     if ($resp == 2 || $resp == 3){
       echo "<a href=\"ApprobationAnnonces.php\">Valider des annonces</a>";
       echo "<a href=\"ApprobationEntreprises.php\">Valider des entreprises</a>";
-      if ($resp == 3) echo "<a href=\"EspaceRoot.php\">Ajoutez/Supprimer des administrateur</a>";
+      if ($resp == 3) echo "<a href=\"EspaceRoot.php\">Ajouter/Supprimer des administrateurs</a>";
     }
     else if ($resp == 4){
       echo "<a href=\"espace_entreprise.php\">Espace entreprise</a>";
-      echo "<a href=\"ajoutAnnonce.php\">Ajoutez une annonce</a>";
+      echo "<a href=\"ajoutAnnonce.php\">Ajouter une annonce</a>";
     }
     echo "</nav>";
     echo "</header>";
