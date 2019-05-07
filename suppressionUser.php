@@ -5,7 +5,6 @@ include_once('connex_BD.php');
 include_once('supprCompte.php');
 $resp=getResp();
 $connex=connex_BD();
-echo $resp;
 if($resp==4 || $resp==0 || $resp==3) {
    header('Location: index.php');
  }
