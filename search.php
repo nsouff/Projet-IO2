@@ -30,7 +30,7 @@
   <body>
     <?php
       head();
-      echo "<a href=\"#\" class=\"go_top\">^^</a>";
+      echo "<a href=\"#\" class=\"go_top\">^</a>";
       echo "<div class=\"res_search\">\n<h2>Résultat</h2>\n";
       if ($b){
         $i = locate($connex, $où);
