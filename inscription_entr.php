@@ -1,5 +1,4 @@
 <?php
-  include_once('nTabulation.php');
   include_once('save_entr.php');
   include_once('connex_BD.php');
   include_once('head.php');
