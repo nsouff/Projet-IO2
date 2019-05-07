@@ -1,4 +1,4 @@
-Pour faire marcher le site: Créer une base de donnée du nom de Site, puis créer créer un utilisateur s'appelant site avec le mot de passe 'IO2_site' en lui accordant les droits sur cette base de donnée.
+Pour faire marcher le site: Créer une base de donnée du nom de Site, puis créer créer un utilisateur s'appelant site avec le mot de passe 'IO2_site' en lui accordant les droits sur cette base de donnée (si vous voulez utiliser d'autre nom changez les paramètre de la fonction dans connex_BD.php)
 En étant dans la base de donnée Site, utilisez la commande source de mysql avec le fichier 'create_DB.sql', vous avez désormais la base de donnée du site.
 Le root sera déjà inscrit.
 
