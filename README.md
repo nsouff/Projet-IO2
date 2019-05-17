@@ -1,4 +1,4 @@
-# Projet*IO2
+# Projet-IO2
 ## But
 Ce site a été réalisé dans le cadre d'un projet de la matière Internet et outils lors du 2ème semestre de ma première année de licence informatique
 ## Instructions
